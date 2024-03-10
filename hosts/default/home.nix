@@ -119,6 +119,8 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    BROWSER = "firefox";
+    TERMINAL = "alacritty";
   };
 
   # Let Home Manager install and manage itself.
