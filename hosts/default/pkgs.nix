@@ -117,7 +117,6 @@
       lshw
       steam
       hyper
-      kitty
       keepassxc
       qbittorrent
     #  thunderbird
