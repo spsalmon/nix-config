@@ -116,7 +116,7 @@
       vscodium
       lshw
       steam
-      hyper
+      alacritty
       keepassxc
       qbittorrent
     #  thunderbird
