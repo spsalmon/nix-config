@@ -40,8 +40,7 @@
 
   programs.hyprland = {    
       enable = true;    
-      xwayland.enable = true;    
-      nvidiaPatches = true; 
+      xwayland.enable = true;
   }; 
 
   # Enable the GNOME Desktop Environment.
