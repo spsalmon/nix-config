@@ -43,7 +43,7 @@
       "col.shadow" = "rgba(00000099)";
     };
 
-    terminal = alacritty;
+    terminal = "alacritty";
 
     "$mod" = "SUPER";
 
