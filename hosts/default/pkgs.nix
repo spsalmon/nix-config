@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
-  boot.plymouth.enable = false;
+  boot.plymouth.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -34,6 +34,15 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  # Enable Hyprland
+  services.xserver.displayManager.gdm.wayland = true;  
+
+  programs.hyprland = {    
+      enable = true;    
+      xwayland.enable = true;    
+      nvidiaPatches = true; 
+  }; 
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
