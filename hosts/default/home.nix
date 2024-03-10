@@ -43,6 +43,8 @@
       "col.shadow" = "rgba(00000099)";
     };
 
+    terminal = alacritty
+
     "$mod" = "SUPER";
 
     bindm = [
