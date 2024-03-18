@@ -8,9 +8,8 @@
       xwayland.enable = true;
       systemd.enable = true;
   };
-  
+
   wayland.windowManager.hyprland.enable = true;
-  environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
     wayland.windowManager.hyprland.settings = {
     decoration = {
