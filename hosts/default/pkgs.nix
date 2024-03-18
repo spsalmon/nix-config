@@ -3,7 +3,6 @@
 {
   systemd.user.services.alacritty = {
     description = "Launches alacritty on startup";
-    serviceConfig.PassEnvironment = "DISPLAY";
     script = ''
       alacritty
     '';
