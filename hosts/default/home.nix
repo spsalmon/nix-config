@@ -1,6 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports =
+    [
+      ../../modules/home-manager/hyprland.nix
+    ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "sacha";
@@ -33,29 +37,6 @@
     enable = true;
     userName = "spsalmon";
     userEmail = "psalmonsacha@gmail.com";
-  };
-
-  wayland.windowManager.hyprland.enable = true;
-
-    wayland.windowManager.hyprland.settings = {
-    decoration = {
-      shadow_offset = "0 5";
-      "col.shadow" = "rgba(00000099)";
-    };
-
-    "$terminal" = "alacritty";
-
-    "$mod" = "SUPER";
-
-    bindm = [
-      # mouse movements
-      "$mod, mouse:272, movewindow"
-      "$mod, mouse:273, resizewindow"
-      "$mod ALT, mouse:272, resizewindow"
-      # launch alacritty
-      "SUPER, Q, alacritty"
-      "SUPER, F, firefox"
-    ];
   };
 
   # This value determines the Home Manager release that your configuration is
@@ -125,16 +106,8 @@
     # EDITOR = "emacs";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
-    WLR_NO_HARDWARE_CURSORS=1;
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs = {
-    waybar = {
-      enable = true;
-      package = (pkgs.waybar.override (oldAttrs: { pulseSupport = true;} ));
-    };
-  };
 }
