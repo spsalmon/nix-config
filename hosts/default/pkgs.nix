@@ -1,6 +1,14 @@
 { lib, config, pkgs, inputs, ... }:
 
 {
+  systemd.user.services.alacritty = {
+    description = "Launches alacritty on startup";
+    serviceConfig.PassEnvironment = "DISPLAY";
+    script = ''
+      alacritty
+    '';
+    wantedBy = [ "multi-user.target" ]; # starts after login
+  }
   main-user.enable = true;
   main-user.userName = "sacha";
 
