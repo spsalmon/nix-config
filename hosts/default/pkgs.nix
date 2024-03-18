@@ -7,7 +7,8 @@
     script = ''
       alacritty
     '';
-    wantedBy = [ "multi-user.target" ]; # starts after login
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
   };
   
   main-user.enable = true;
