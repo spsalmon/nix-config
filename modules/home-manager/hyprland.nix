@@ -3,13 +3,11 @@
   # Enable Hyprland
   services.xserver.displayManager.gdm.wayland = true;  
 
-  programs.hyprland = {    
-      enable = true;    
-      xwayland.enable = true;
-      systemd.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    systemd.enable = true;
   };
-
-  wayland.windowManager.hyprland.enable = true;
 
     wayland.windowManager.hyprland.settings = {
     decoration = {

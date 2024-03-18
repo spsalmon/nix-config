@@ -9,6 +9,8 @@
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
+  # Activate Hyprland
+  programs.hyprland.enable = true;
   # Activate zsh
   programs.zsh.enable = true;
 
