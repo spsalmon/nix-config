@@ -22,8 +22,8 @@
       "$mod, mouse:273, resizewindow"
       "$mod ALT, mouse:272, resizewindow"
       # launch alacritty
-      "SHIFT, Q, alacritty"
-      "SHIFT, F, firefox"
+      ",SHIFT, Q, alacritty"
+      ",SHIFT, F, firefox"
     ];
   };
 }
