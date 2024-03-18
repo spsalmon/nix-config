@@ -127,6 +127,10 @@
     TERMINAL = "alacritty";
   };
 
+  home.environmentSessionVariables = {
+    WLR_NO_HARDWARE_CURSORS=1;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
