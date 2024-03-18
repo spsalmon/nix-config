@@ -125,9 +125,6 @@
     # EDITOR = "emacs";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
-  };
-
-  home.environmentSessionVariables = {
     WLR_NO_HARDWARE_CURSORS=1;
   };
 
