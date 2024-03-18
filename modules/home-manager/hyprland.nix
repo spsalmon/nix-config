@@ -1,8 +1,5 @@
 {pkgs, config, lib, inputs, ... }:
 {
-  # Enable Hyprland
-  services.xserver.displayManager.gdm.wayland = true;  
-
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;

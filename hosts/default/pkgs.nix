@@ -9,8 +9,6 @@
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
-  # Activate Hyprland
-  programs.hyprland.enable = true;
   # Activate zsh
   programs.zsh.enable = true;
 
@@ -41,6 +39,10 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  # Activate Hyprland
+  services.xserver.displayManager.gdm.wayland = true;  
+  programs.hyprland.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
