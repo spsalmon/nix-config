@@ -4,11 +4,6 @@
   main-user.enable = true;
   main-user.userName = "sacha";
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
-  };
-
   # Activate zsh
   programs.zsh.enable = true;
 
