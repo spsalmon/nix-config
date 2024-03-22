@@ -16,6 +16,10 @@
       gaps_in = "5";
       gaps_out = "5";
     };
+
+    animation = {
+      enabled = false;
+    };
     
     input = {
       kb_layout = "fr";
