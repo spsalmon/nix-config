@@ -2,7 +2,7 @@
 
 {
   imports = [
-    "../../modules/nixos/gnome.nix"
+    ../../modules/nixos/gnome.nix
   ];
   main-user.enable = true;
   main-user.userName = "sacha";
