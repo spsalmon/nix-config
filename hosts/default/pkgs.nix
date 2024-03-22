@@ -110,6 +110,7 @@
     git
     plymouth
     alacritty
+    tofi
   ];
   
   # Allow experimental features
