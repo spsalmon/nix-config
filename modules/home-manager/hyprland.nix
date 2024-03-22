@@ -9,6 +9,8 @@
     wayland.windowManager.hyprland.settings = {
     decoration = {
       shadow_offset = "0 5";
+      gaps_in = "5";
+      gaps_out = "5";
       "col.shadow" = "rgba(00000099)";
     };
     
