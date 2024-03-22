@@ -9,9 +9,12 @@
     wayland.windowManager.hyprland.settings = {
     decoration = {
       shadow_offset = "0 5";
+      "col.shadow" = "rgba(00000099)";
+    };
+
+    general = {
       gaps_in = "5";
       gaps_out = "5";
-      "col.shadow" = "rgba(00000099)";
     };
     
     input = {
@@ -31,8 +34,9 @@
     ];
     bind=[
       # launch alacritty
-      "SHIFT, Q, exec, alacritty"
-      "SHIFT, F, exec, firefox"
+      "$mod, A, exec, alacritty"
+      "$mod, F, exec, firefox"
+      "$mod, T, exec, tofi"
     ];
   };
 }
