@@ -15,7 +15,7 @@
     };
     
     input = {
-      kb_layout = fr;
+      kb_layout = "fr";
       kb_options="grp:caps_toggle";
     };
 
