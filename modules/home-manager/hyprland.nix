@@ -17,7 +17,7 @@
       gaps_out = "5";
     };
 
-    animation = {
+    animations = {
       enabled = false;
     };
     
