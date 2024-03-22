@@ -104,6 +104,7 @@
       alacritty
       keepassxc
       qbittorrent
+      tofi
     #  thunderbird
     ];
   };
