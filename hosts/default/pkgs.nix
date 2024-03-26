@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/nixos/gnome.nix
+    ../../modules/nixos/libreoffice.nix
   ];
   main-user.enable = true;
   main-user.userName = "sacha";
