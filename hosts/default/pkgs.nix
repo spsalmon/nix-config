@@ -4,6 +4,7 @@
   imports = [
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/libreoffice.nix
+    ../../modules/nixos/vlc.nix
   ];
   main-user.enable = true;
   main-user.userName = "sacha";
