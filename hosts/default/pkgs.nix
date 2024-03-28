@@ -81,6 +81,7 @@
       qbittorrent
       scribus
       zip
+      unzip
     #  thunderbird
     ];
   };
