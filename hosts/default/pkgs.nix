@@ -80,6 +80,7 @@
       keepassxc
       qbittorrent
       scribus
+      zip
     #  thunderbird
     ];
   };
