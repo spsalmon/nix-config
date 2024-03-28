@@ -79,6 +79,7 @@
       steam
       keepassxc
       qbittorrent
+      scribus
     #  thunderbird
     ];
   };
