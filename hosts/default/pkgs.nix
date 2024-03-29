@@ -79,6 +79,7 @@
       steam
       keepassxc
       qbittorrent
+      guake
     #  thunderbird
     ];
   };
