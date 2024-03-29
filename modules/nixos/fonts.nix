@@ -6,7 +6,7 @@
     twemoji-color-font
   ];
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
@@ -19,7 +19,7 @@
 
     fontconfig = {
     defaultFonts = {
-      serif = [ "IMB Plex Serif" ];
+      serif = [ "IBM Plex Serif" ];
       sansSerif = [ "IBM Plex Sans" ];
       monospace = [ "IBM Plex Mono" ];
     };
