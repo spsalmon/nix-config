@@ -66,6 +66,8 @@
     pulse.enable = true;
   };
 
+  environment.extraOutputsToInstall = [ "dev" ]; 
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sacha = {
     isNormalUser = true;
