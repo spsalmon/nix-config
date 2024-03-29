@@ -42,7 +42,7 @@
       # launch alacritty
       "$mod, A, exec, alacritty"
       "$mod, F, exec, firefox"
-      "$mod, T, exec, tofi"
+      "$mod, T, exec, fuzzel"
     ];
   };
 }

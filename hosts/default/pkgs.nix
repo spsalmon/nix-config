@@ -116,7 +116,7 @@
     git
     plymouth
     alacritty
-    tofi
+    fuzzel
   ];
   
   # Allow experimental features
