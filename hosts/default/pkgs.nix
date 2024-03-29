@@ -79,6 +79,9 @@
       steam
       keepassxc
       qbittorrent
+      scribus
+      zip
+      unzip
       guake
     #  thunderbird
     ];
