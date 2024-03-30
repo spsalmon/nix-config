@@ -28,6 +28,12 @@
       kb_options="grp:caps_toggle";
     };
 
+    misc = {
+      disable_hyprland_logo = true
+      disable_splash_rendering = true
+      background_color = 0x24273a
+    }
+
     "$terminal" = "alacritty";
 
     "$mainMod" = "SUPER";
@@ -43,9 +49,9 @@
     ];
     bind=[
       # apps
-      "$mainMod, A, exec, alacritty"
+      "$mainMod, T, exec, $terminal"
       "$mainMod, F, exec, firefox"
-      "$mainMod, T, exec, fuzzel"
+      "$mainMod, A, exec, fuzzel"
 
       # App management
       "$mainMod SHIFT, Q, killactivate"
