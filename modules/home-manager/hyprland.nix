@@ -44,8 +44,8 @@
       "$mainMod, mouse_up, workspace, e-1"
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
-      "bindm = $mainMod, mouse:272, movewindow"
-      "bindm = $mainMod, mouse:273, resizewindow"
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
     ];
     bind=[
       # apps
@@ -54,7 +54,7 @@
       "$mainMod, A, exec, fuzzel"
 
       # App management
-      "$mainMod SHIFT, Q, killactivate"
+      "$mainMod SHIFT, Q, killactive"
       "$mainMod SHIFT, F, togglefloating"
       "$mainMod SHIFT, M, exit"
 
