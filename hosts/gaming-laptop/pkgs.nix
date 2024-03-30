@@ -4,11 +4,8 @@
   imports =
     [
       ../default/pkgs.nix
+      ../../modules/nixos/bootloader.nix
     ];
-  
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
