@@ -29,9 +29,9 @@
     };
 
     misc = {
-      disable_hyprland_logo = true
-      disable_splash_rendering = true
-      background_color = 0x24273a
+      disable_hyprland_logo = true;
+      disable_splash_rendering = true;
+      background_color = "0x24273a";
     }
 
     "$terminal" = "alacritty";
