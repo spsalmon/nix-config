@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  colorScheme = import ../../../color-schemes/material-dark-yellow.nix;
+  colorScheme = import ../../color-schemes/material-dark-yellow.nix;
   font = "IBM Plex Mono";
 in {
   home.packages = with pkgs; [ jq radeontop ];
