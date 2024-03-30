@@ -47,6 +47,7 @@
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
     ];
+
     bind=[
       # apps
       "$mainMod, T, exec, $terminal"
@@ -63,8 +64,8 @@
       "$mainMod, l, movefocus, r"
       "$mainMod, k, movefocus, u"
       "$mainMod, j, movefocus, d"
-      "$mainMod, Tab, cyclenext,"
-      "$mainMod, Tab, alterzorder,"
+      "$mainMod, Tab, cyclenext"
+      "$mainMod, Tab, alterzorder"
 
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, 1, focusworkspaceoncurrentmonitor, 1"
