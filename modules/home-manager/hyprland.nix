@@ -73,6 +73,10 @@
       "$mainMod, Tab, cyclenext"
       "$mainMod, Tab, alterzorder"
 
+      # nagivate through workspaces with arrow keys
+      "$mainMod, Up, focusworkspaceoncurrentmonitor, e+1"
+      "$mainMod, Down, focusworkspaceoncurrentmonitor, e-1"
+
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, &, workspace, 1"
       "$mainMod, é, workspace, 2"
