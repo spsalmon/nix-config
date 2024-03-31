@@ -12,8 +12,8 @@ in {
       mainBar = {
         layer = "top"; # Waybar at top layer
         position = "top"; # Waybar position (top|bottom|left|right)
-        #height = 32; # Waybar height
-        #width = 48; # Waybar width
+        height = 32; # Waybar height
+        width = 48; # Waybar width
         # Choose the order of the modules
         modules-left = [ "custom/power" "pulseaudio" "backlight"];
         modules-center = [ "hyprland/workspaces" "hyprland/window" "tray" ];
