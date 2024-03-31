@@ -74,8 +74,8 @@
       "$mainMod, Tab, alterzorder"
 
       # nagivate through workspaces with arrow keys
-      "$mainMod, Up, focusworkspaceoncurrentmonitor, e+1"
-      "$mainMod, Down, focusworkspaceoncurrentmonitor, e-1"
+      "$mainMod, p, focusworkspaceoncurrentmonitor, e+1"
+      "$mainMod, m, focusworkspaceoncurrentmonitor, e-1"
 
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, &, workspace, 1"
