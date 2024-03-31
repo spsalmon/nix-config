@@ -83,7 +83,7 @@
       scribus
       zip
       unzip
-      networkmanagerapplet
+      networkmanager
     ];
   };
 
