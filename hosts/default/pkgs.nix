@@ -83,6 +83,7 @@
       scribus
       zip
       unzip
+      nm-applet
     ];
   };
 

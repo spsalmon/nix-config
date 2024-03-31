@@ -1,6 +1,6 @@
 {pkgs, config, lib, inputs, ... }:
 {
-  home.packages = with pkgs; [ mako libnotify hyprpaper grim slurp pamixer nm-applet];
+  home.packages = with pkgs; [ mako libnotify hyprpaper grim slurp pamixer ];
   
   wayland.windowManager.hyprland = {
     enable = true;
