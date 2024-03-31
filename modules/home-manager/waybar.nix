@@ -305,6 +305,6 @@ in {
         color: #${colorScheme.on_primary};
       }
     ";
-  };
+  }
 }
 

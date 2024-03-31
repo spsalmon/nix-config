@@ -1,6 +1,6 @@
 {pkgs, config, lib, inputs, ... }:
 {
-  home.packages = with pkgs; [ mako libnotify hyprpaper grim slurp pamixer ];
+  home.packages = with pkgs; [ mako libnotify hyprpaper grim slurp pamixer nm-applet];
   
   wayland.windowManager.hyprland = {
     enable = true;
@@ -26,6 +26,7 @@
     input = {
       kb_layout = "fr";
       kb_options="grp:caps_toggle";
+      sensitivity = "0.5";
     };
 
     misc = {
@@ -37,6 +38,8 @@
     "$terminal" = "alacritty";
 
     "$mainMod" = "SUPER";
+
+    monitor = ",preferred,auto,1";
 
     exec-once = [
       "waybar"
