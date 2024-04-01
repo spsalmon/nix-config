@@ -117,7 +117,7 @@ in {
         #modules {
           background-color: transparent;
         }
-      "
+      ";
     };
   };
 }
