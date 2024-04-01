@@ -91,7 +91,7 @@
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, code:10, workspace, 1"
       "$mainMod, code:11, workspace, 2"
-      "$mainMod, code:12 workspace, 3"
+      "$mainMod, code:12, workspace, 3"
       "$mainMod, code:13, workspace, 4"
       "$mainMod, code:14, workspace, 5"
       "$mainMod, code:15, workspace, 6"
