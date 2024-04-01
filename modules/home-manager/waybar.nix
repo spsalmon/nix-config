@@ -43,19 +43,19 @@ in {
         };
         "clock" = {
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "{:%Y/%m/%d} ";
-          format = "{:%H:%M} ";
+          format-alt = "{:%Y/%m/%d}";
+          format = "  {:%H:%M}   ";
         };
         "temperature" = {
           # thermal-zone = 2;
           "hwmon-path" = "/sys/class/hwmon/hwmon1/temp1_input";
           critical-threshold = 80;
           # format-critical = "{temperatureC}°C ";
-          format = "{temperatureC}°C ";
+          format = "  {temperatureC}°C   ";
         };
         "backlight" = {
           # device = "acpi_video1";
-          format = "{percent}% {icon}";
+          format = "  {percent}% {icon}  ";
           states = [ "0" "50" ];
         };
         "battery" = {
@@ -111,6 +111,7 @@ in {
 	      * {
 	        border-radius: 0.4rem;
 	        font-family: '${font}', 'Font Awesome';
+          background-color: #5A5A5A;
 	      }
       ";
   };
