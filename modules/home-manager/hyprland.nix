@@ -74,10 +74,10 @@
       "$mainMod, Tab, alterzorder"
 
       # nagivate through workspaces with arrow keys
-      "$mainMod, Up, workspace, e+1"
+      "$mainMod SHIFT, Tab, workspace, e+1"
       "$mainMod, Down, workspace, e-1"
 
-      "SUPER,mouse_down,workspace,e-1"
+      "$mainMod, V, exec, codium"
 
       # nagivate through workspaces with arrow keys
       "$mainMod SHIFT, Up, movetoworkspace, e+1"
