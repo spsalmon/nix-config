@@ -3,7 +3,7 @@
 let
   font = "IBM Plex Mono";
 in {
-  home.packages = with pkgs; [ jq radeontop ];
+  home.packages = with pkgs; [ jq ];
 
   programs.waybar = {
     enable = true;
@@ -106,6 +106,18 @@ in {
           "on-click" = "pavucontrol";
         };
       };
+      style = "
+	      * {
+	        border-radius: 0.4rem;
+	        font-family: '${font}', 'Font Awesome';
+	        font-size: 13px;
+	        min-height: 0;
+	      }
+
+        #modules {
+          background-color: transparent;
+        }
+      "
     };
   };
 }
