@@ -13,10 +13,11 @@ in {
         position = "top"; # Waybar position (top|bottom|left|right)
         height = 32; # Waybar height
         spacing = 4; # Waybar width
+        margin = 5;
         # Choose the order of the modules
         modules-left = [ "hyprland/workspaces" "hyprland/submap" "pulseaudio" "backlight"];
         modules-center = [ "clock" ];
-        modules-right = [ "battery" "battery#bat2" "temperature" "network" "bluetooth" ];
+        modules-right = [ "battery" "temperature" "network"];
         "hyprland/workspaces" = {
           disable-scroll = true;
           disable-markup  = false;
