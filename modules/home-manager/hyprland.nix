@@ -77,6 +77,8 @@
       "$mainMod, Up, workspace, e+1"
       "$mainMod, Down, workspace, e-1"
 
+      "SUPER,mouse_down,workspace,e-1"
+
       # nagivate through workspaces with arrow keys
       "$mainMod SHIFT, Up, movetoworkspace, e+1"
       "$mainMod SHIFT, Down, movetoworkspace, e-1"
