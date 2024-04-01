@@ -111,13 +111,7 @@ in {
 	      * {
 	        border-radius: 0.4rem;
 	        font-family: '${font}', 'Font Awesome';
-	        font-size: 13px;
-	        min-height: 0;
 	      }
-
-        #modules {
-          background-color: transparent;
-        }
       ";
   };
 }
