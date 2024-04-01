@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 let
-  colorScheme = import ../../color-schemes/material-dark-yellow.nix;
   font = "IBM Plex Mono";
 in {
   home.packages = with pkgs; [ jq radeontop ];
@@ -35,22 +34,9 @@ in {
             "8" = "8";
             "9" = "9";
             "10" = "10";
-            "focused" = "";
-            "default" = "";
-          };
-        };
-        "hyprland/mode" = {
-          format = "<span style=\"italic\">{}</span>";
-        };
-        "hyprland/language" = {
-          format = "{}";
-          max-length = 50;
-        };
-        "idle_inhibitor" = {
-          format = "{icon}";
-          format-icons = {
-            activated = "";
-            deactivated = "";
+            
+            "active": "",
+            "default": "",
           };
         };
         "clock" = {
