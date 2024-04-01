@@ -13,7 +13,8 @@ in {
         position = "top"; # Waybar position (top|bottom|left|right)
         height = 32; # Waybar height
         spacing = 4; # Waybar width
-        margin = 5;
+        margin-left = 5;
+        margin-right = 5;
         # Choose the order of the modules
         modules-left = [ "hyprland/workspaces" "hyprland/submap" "pulseaudio" "backlight"];
         modules-center = [ "clock" ];
