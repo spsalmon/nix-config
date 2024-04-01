@@ -35,8 +35,8 @@ in {
             "9" = "9";
             "10" = "10";
             
-            "active": "",
-            "default": "",
+            "active" = "";
+            "default" = "";
           };
         };
         "clock" = {
