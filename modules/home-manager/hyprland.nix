@@ -48,7 +48,7 @@
     monitor = ",preferred,auto,1";
 
     exec-once = [
-      #"waybar"
+      "waybar"
       "mako"
       "hyprpaper"
     ];
@@ -64,6 +64,7 @@
       "$mainMod, T, exec, $terminal"
       "$mainMod, F, exec, firefox"
       "$mainMod, A, exec, fuzzel"
+      "$mainMod, V, exec, codium"
 
       # App management
       "$mainMod SHIFT, Q, killactive"
@@ -79,14 +80,8 @@
       "$mainMod, Tab, alterzorder"
 
       # nagivate through workspaces with arrow keys
-      "$mainMod SHIFT, Tab, workspace, e+1"
-      "$mainMod, Down, workspace, e-1"
-
-      "$mainMod, V, exec, codium"
-
-      # nagivate through workspaces with arrow keys
-      "$mainMod SHIFT, Up, movetoworkspace, e+1"
-      "$mainMod SHIFT, Down, movetoworkspace, e-1"
+      "$mainMod SHIFT, Up, movetoworkspace, m+1"
+      "$mainMod SHIFT, Down, movetoworkspace, m-1"
 
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, code:10, workspace, 1"
