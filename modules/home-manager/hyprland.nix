@@ -31,7 +31,7 @@
       natural_scroll = "false";
     };
 
-    touchpad = {
+    input.touchpad = {
       natural_scroll = "true";
     };
 
