@@ -106,7 +106,8 @@ in {
           "on-click" = "pavucontrol";
         };
       };
-      style = "
+    };
+          style = "
 	      * {
 	        border-radius: 0.4rem;
 	        font-family: '${font}', 'Font Awesome';
@@ -118,7 +119,6 @@ in {
           background-color: transparent;
         }
       ";
-    };
   };
 }
 
