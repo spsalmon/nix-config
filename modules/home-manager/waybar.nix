@@ -13,11 +13,11 @@ in {
         layer = "top"; # Waybar at top layer
         position = "top"; # Waybar position (top|bottom|left|right)
         height = 32; # Waybar height
-        width = 48; # Waybar width
+        spacing = 4; # Waybar width
         # Choose the order of the modules
-        modules-left = [ "custom/power" "pulseaudio" "backlight"];
-        modules-center = [ "hyprland/workspaces" "hyprland/window" "tray" ];
-        modules-right = [ "battery" "battery#bat2" "cpu" "temperature" "network" "bluetooth" "clock" ];
+        modules-left = [ "hyprland/workspaces" "hyprland/submap" "pulseaudio" "backlight"];
+        modules-center = [ "clock" ];
+        modules-right = [ "battery" "battery#bat2" "temperature" "network" "bluetooth" ];
         "hyprland/workspaces" = {
           disable-scroll = true;
           disable-markup  = false;
@@ -53,24 +53,10 @@ in {
             deactivated = "";
           };
         };
-        "tray" = {
-          icon-size = 21;
-          spacing = 10;
-        };
         "clock" = {
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "{:%Y/%d/%m} ";
+          format-alt = "{:%Y/%m/%d} ";
           format = "{:%H:%M} ";
-        };
-        "cpu" = {
-          format = "{usage}%  CPU";
-        };
-        "memory" = {
-          format = "{}% ";
-        };
-        "disk" = {
-          format = "{}% ";
-          tooltip-format = "{used} / {total} used";
         };
         "temperature" = {
           # thermal-zone = 2;
