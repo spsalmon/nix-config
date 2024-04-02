@@ -85,6 +85,7 @@
       unzip
       networkmanager
       shotman
+      grimblast
     ];
   };
 
