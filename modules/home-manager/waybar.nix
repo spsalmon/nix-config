@@ -115,7 +115,7 @@ in {
 	      }
 
         #modules {
-          font-color: #FFFFFF;
+          color: #FFFFFF;
         }
       ";
   };
