@@ -84,6 +84,7 @@
       zip
       unzip
       networkmanager
+      shotman
     ];
   };
 
