@@ -11,7 +11,7 @@ in {
       mainBar = {
         layer = "top"; # Waybar at top layer
         position = "top"; # Waybar position (top|bottom|left|right)
-        height = 32; # Waybar height
+        height = 34; # Waybar height
         spacing = 4; # Waybar width
         margin-left = 5;
         margin-right = 5;
@@ -114,7 +114,7 @@ in {
           background-color: #5A5A5A;
 	      }
 
-        #modules {
+        #button {
           color: #FFFFFF;
         }
       ";
