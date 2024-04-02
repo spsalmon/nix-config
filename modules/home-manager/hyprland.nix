@@ -65,7 +65,7 @@
       "$mainMod, F, exec, firefox"
       "$mainMod, A, exec, fuzzel"
       "$mainMod, V, exec, codium"
-      ", PrintScreen, exec, shotman"
+      ", PrintScreen, exec, shotman -c region"
 
       # App management
       "$mainMod SHIFT, Q, killactive"
