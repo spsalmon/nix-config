@@ -112,9 +112,10 @@ in {
 	        border-radius: 0.4rem;
 	        font-family: '${font}', 'Font Awesome';
           background-color: #5A5A5A;
+          color: #FFFFFF;
 	      }
 
-        #button {
+        #clock {
           color: #FFFFFF;
         }
       ";
