@@ -74,9 +74,9 @@ in {
         };
         "network" = {
           # "interface" = "wlp2s0"; # (Optional) To force the use of this interface
-          "format-wifi" = "{essid} ({signalStrength}%) ";
-          "format-ethernet" = "{ifname} = {ipaddr}/{cidr} ";
-          "format-disconnected" = "Disconnected ⚠";
+          "format-wifi" = "  {essid} ({signalStrength}%)   ";
+          "format-ethernet" = "  {ifname} = {ipaddr}/{cidr}   ";
+          "format-disconnected" = "  Disconnected ⚠  ";
           "interval" = 7;
         };
         "bluetooth" = {
@@ -113,6 +113,10 @@ in {
 	        font-family: '${font}', 'Font Awesome';
           background-color: #5A5A5A;
 	      }
+
+        #modules {
+          font-color: #FFFFFF;
+        }
       ";
   };
 }

@@ -26,7 +26,7 @@
     input = {
       kb_layout = "fr";
       kb_options="grp:caps_toggle";
-      sensitivity = "-0.3";
+      sensitivity = "-0.4";
       accel_profile = "flat";
       natural_scroll = "false";
     };
