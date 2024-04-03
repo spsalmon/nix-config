@@ -51,5 +51,13 @@
           ];
         };
 
+      nixosConfigurations.lab = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [ 
+            ./hosts/lab/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+
     };
 }
