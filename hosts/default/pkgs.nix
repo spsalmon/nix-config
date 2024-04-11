@@ -86,6 +86,7 @@
       networkmanager
       shotman
       grimblast
+      nmap
     ];
   };
 
