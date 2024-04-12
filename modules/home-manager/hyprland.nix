@@ -52,6 +52,11 @@
       "mako"
       "hyprpaper"
     ];
+
+    windowrulev2 = [
+      "float,class:(discord)"
+      "float,class:(steam)"
+    ]
     
     bindm = [
       # Move/resize windows with mainMod + LMB/RMB and dragging
