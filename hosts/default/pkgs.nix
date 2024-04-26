@@ -37,6 +37,7 @@
   services.xserver.enable = true;
 
   # Activate Hyprland
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;  
   programs.hyprland.enable = true;
 
