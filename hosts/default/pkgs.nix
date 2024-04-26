@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/nixos/gnome.nix
+    #../../modules/nixos/gnome.nix
     ../../modules/nixos/libreoffice.nix
     ../../modules/nixos/vlc.nix
     ../../modules/nixos/fonts.nix
