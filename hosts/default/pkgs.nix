@@ -6,6 +6,7 @@
     ../../modules/nixos/libreoffice.nix
     ../../modules/nixos/vlc.nix
     ../../modules/nixos/fonts.nix
+    ../../modules/nixos/steam.nix
   ];
   main-user.enable = true;
   main-user.userName = "sacha";
@@ -72,19 +73,6 @@
     isNormalUser = true;
     description = "sacha";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      vscodium
-      lshw
-      steam
-      keepassxc
-      qbittorrent
-      zip
-      unzip
-      networkmanager
-      nmap
-      ncdu
-    ];
   };
 
   home-manager = {
@@ -98,22 +86,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Install steam and enable it 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-
-  programs.steam.gamescopeSession.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
     libinput
     git
-    plymouth
     alacritty
     fuzzel
   ];

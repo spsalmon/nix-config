@@ -1,6 +1,10 @@
 { pkgs,  ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    plymouth
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

@@ -56,6 +56,16 @@
     pkgs.discord
     pkgs.waybar
     pkgs.pavucontrol
+    pkgs.firefox
+    pkgs.vscodium
+    pkgs.lshw
+    pkgs.keepassxc
+    pkgs.qbittorrent
+    pkgs.zip
+    pkgs.unzip
+    pkgs.networkmanager
+    pkgs.nmap
+    pkgs.ncdu
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
