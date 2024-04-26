@@ -56,7 +56,7 @@
     pkgs.discord
     pkgs.waybar
     pkgs.pavucontrol
-    pkgs.firefox
+    pkgs.firefox-wayland
     pkgs.vscodium
     pkgs.lshw
     pkgs.keepassxc
