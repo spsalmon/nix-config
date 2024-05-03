@@ -63,8 +63,6 @@
     pkgs.qbittorrent
     pkgs.zip
     pkgs.unzip
-    pkgs.rar
-    pkgs.unrar
     pkgs.networkmanager
     pkgs.nmap
     pkgs.ncdu

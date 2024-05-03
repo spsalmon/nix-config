@@ -94,6 +94,8 @@
     git
     alacritty
     fuzzel
+    rar
+    unrar
   ];
   
   # Allow experimental features
