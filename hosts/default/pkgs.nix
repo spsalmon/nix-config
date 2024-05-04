@@ -98,6 +98,7 @@
     unrar
     openfortivpn
     qt6.qtbase
+    gnumake
   ];
 
   programs.nix-ld.enable = true;
