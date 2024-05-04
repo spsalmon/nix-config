@@ -98,6 +98,7 @@
     unrar
     openfortivpn
     fuse3
+    nodejs_21
   ];
 
   programs.nix-ld.enable = true;
