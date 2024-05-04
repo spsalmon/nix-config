@@ -96,6 +96,7 @@
     fuzzel
     rar
     unrar
+    openfortivpn
   ];
   
   # Allow experimental features
