@@ -99,6 +99,7 @@
     openfortivpn
     fuse3
     nodejs_21
+    glibc
   ];
 
   programs.nix-ld.enable = true;
