@@ -98,6 +98,12 @@
     unrar
     openfortivpn
   ];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
   
   # Allow experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
