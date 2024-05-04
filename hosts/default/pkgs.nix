@@ -97,16 +97,14 @@
     rar
     unrar
     openfortivpn
-    fuse3
-    nodejs_21
-    glibc
+    qt6.qtbase
   ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
-    fuse3
+    qt6.qtbase
   ];
   
   # Allow experimental features
