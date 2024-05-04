@@ -97,6 +97,7 @@
     rar
     unrar
     openfortivpn
+    fuse3
   ];
 
   programs.nix-ld.enable = true;
