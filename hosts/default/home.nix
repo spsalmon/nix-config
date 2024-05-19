@@ -60,7 +60,7 @@
     pkgs.vscodium
     pkgs.lshw
     pkgs.keepassxc
-    pkgs.qbittorrent
+    pkgs.transmission
     pkgs.zip
     pkgs.unzip
     pkgs.networkmanager
