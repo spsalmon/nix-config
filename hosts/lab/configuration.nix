@@ -9,5 +9,5 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  networking.networkmanager.ethernet.macAddress = "stable";
+  networking.networkmanager.ethernet.macAddress = "permanent";
 }
