@@ -8,4 +8,6 @@
       ./pkgs.nix
       inputs.home-manager.nixosModules.default
     ];
+
+  networking.networkmanager.ethernet.macAddress = "preserve";
 }
