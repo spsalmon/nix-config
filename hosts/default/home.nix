@@ -16,8 +16,8 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
     '';
-  }
-  
+  };
+
   # git setup
   programs.git = {
     enable = true;
