@@ -11,28 +11,8 @@
   home.username = "sacha";
   home.homeDirectory = "/home/sacha";
 
-  # Zhs config
-  programs.zsh = {
-  dotDir = ".config/zsh";
-  enable = true;
-  enableCompletion = true;
-  autosuggestion.enable = true;
-  syntaxHighlighting.enable = true;
-
-  shellAliases = {
-    ll = "ls -l";
-    #update = "sudo nixos-rebuild switch";
-  };
-  history.size = 10000;
-  history.path = "${config.xdg.dataHome}/zsh/history";
+  programs.fish.enable = true;
   
-  oh-my-zsh = {
-    enable = true;
-    plugins = [ "git" ];
-    theme = "gnzh";
-    };
-  };
-
   # git setup
   programs.git = {
     enable = true;
