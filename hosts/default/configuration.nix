@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./pkgs.nix
-      ../../modules/nixos/main-user.nix
       inputs.home-manager.nixosModules.default
     ];
 }
