@@ -11,7 +11,12 @@
   home.username = "sacha";
   home.homeDirectory = "/home/sacha";
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+  }
   
   # git setup
   programs.git = {
