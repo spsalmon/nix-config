@@ -7,9 +7,7 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/steam.nix
   ];
-  main-user.enable = true;
-  main-user.userName = "sacha";
-
+  
   # Activate zsh
   programs.zsh.enable = true;
 
