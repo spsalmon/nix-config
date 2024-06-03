@@ -7,6 +7,7 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/fish.nix
+    ../../modules/nixos/kde.nix
   ];
 
   # Activate direnv
@@ -30,11 +31,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Activate Hyprland
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;  
-  programs.hyprland.enable = true;
 
   # Enable libinput
   services.libinput.enable = true;
