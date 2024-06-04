@@ -10,8 +10,8 @@
       clickItemTo = "open"; # If you liked the click-to-open default from plasma 5
       lookAndFeel = "org.kde.breezedark.desktop";
       cursorTheme = "Bibata-Modern-Ice";
-      iconTheme = "Papirus-Dark";
-      wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Patak/contents/images/1080x1920.png";
+      iconTheme = "Dracula-KDE";
+      wallpaper = "/home/sacha/wallpaper/gybe_fsharp.jpg";
     };
 
     hotkeys.commands."launch-alacritty" = {
@@ -38,7 +38,7 @@
           # add the "icon" key to the "General" group for the widget in
           # ~/.config/plasma-org.kde.plasma.desktop-appletsrc.
           {
-            name = "org.kde.plasma.kickoff";
+            name = "org.kde.plasma.kicker";
             config = {
               General.icon = "nix-snowflake-white";
             };
@@ -50,8 +50,9 @@
             name = "org.kde.plasma.icontasks";
             config = {
               General.launchers = [
-                "applications:org.kde.alacritty.desktop"
-                "applications:org.kde.firefox.desktop"
+                "applications:org.kde.dolphin.desktop"
+                "firefox"
+                "discord"
               ];
             };
           }
@@ -96,6 +97,7 @@
         widgets = [
           "org.kde.plasma.appmenu"
         ];
+        hiding = "autohide";
       }
     ];
 
