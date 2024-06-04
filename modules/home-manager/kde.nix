@@ -9,8 +9,8 @@
     workspace = {
       clickItemTo = "open"; # If you liked the click-to-open default from plasma 5
       lookAndFeel = "org.kde.breezedark.desktop";
-      cursorTheme = "Bibata-Modern-Ice";
-      iconTheme = "Dracula-KDE";
+      cursorTheme = "Breeze";
+      iconTheme = "Breeze-Dark";
       wallpaper = "/home/sacha/wallpaper/gybe_fsharp.jpg";
     };
 
@@ -51,8 +51,8 @@
             config = {
               General.launchers = [
                 "applications:org.kde.dolphin.desktop"
-                "firefox"
-                "discord"
+                "applications:firefox"
+                "applications:discord"
               ];
             };
           }
