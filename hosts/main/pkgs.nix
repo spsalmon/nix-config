@@ -7,6 +7,7 @@
       ../../modules/nixos/gnome.nix
       ../../modules/nixos/bootloader.nix
       ../../modules/nixos/nvidia.nix
+      ../../modules/nixos/obs.nix
     ];
 
   environment.systemPackages = with pkgs; [
