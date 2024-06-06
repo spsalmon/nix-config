@@ -9,8 +9,8 @@
     workspace = {
       clickItemTo = "open"; # If you liked the click-to-open default from plasma 5
       lookAndFeel = "org.kde.breezedark.desktop";
-      cursorTheme = "Breeze";
-      iconTheme = "Breeze-Dark";
+      #cursorTheme = "Breeze";
+      #iconTheme = "Breeze-Dark";
       wallpaper = "/home/sacha/wallpaper/gybe_fsharp.jpg";
     };
 
@@ -23,7 +23,7 @@
     fonts = {
       general = {
         family = "IBM Plex Mono";
-        pointSize = 12;
+        pointSize = 10;
       };
     };
 
@@ -91,14 +91,14 @@
         hiding = "autohide";
       }
       # Global menu at the top
-      {
-        location = "top";
-        height = 26;
-        widgets = [
-          "org.kde.plasma.appmenu"
-        ];
-        hiding = "autohide";
-      }
+      #{
+      #  location = "top";
+      #  height = 26;
+      #  widgets = [
+      #    "org.kde.plasma.appmenu"
+      #  ];
+      #  hiding = "autohide";
+      #}
     ];
 
 
