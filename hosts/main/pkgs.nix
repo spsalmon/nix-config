@@ -8,6 +8,7 @@
       ../../modules/nixos/bootloader.nix
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/obs.nix
+      ../../modules/nixos/openfortivpn.nix
     ];
 
   environment.systemPackages = with pkgs; [

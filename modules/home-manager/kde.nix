@@ -51,8 +51,6 @@
             config = {
               General.launchers = [
                 "applications:org.kde.dolphin.desktop"
-                "applications:firefox"
-                "applications:discord"
               ];
             };
           }
