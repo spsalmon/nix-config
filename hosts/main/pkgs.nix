@@ -9,6 +9,7 @@
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/obs.nix
       ../../modules/nixos/openfortivpn.nix
+      ../../modules/nixos/podman.nix
     ];
 
   environment.systemPackages = with pkgs; [
