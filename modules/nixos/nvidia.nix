@@ -8,7 +8,7 @@
   boot.kernelPackages = pkgs.linuxPackages;
   
   # Enable OpenGL
-  hardware.opengl.graphics = {
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
