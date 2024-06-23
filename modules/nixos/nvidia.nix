@@ -8,9 +8,9 @@
   boot.kernelPackages = pkgs.linuxPackages;
   
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.opengl.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Load nvidia driver for Xorg and Wayland
