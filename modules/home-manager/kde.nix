@@ -86,7 +86,7 @@
             };
           }
         ];
-        hiding = "false";
+        hiding = "none";
       }
       # Global menu at the top
       #{
