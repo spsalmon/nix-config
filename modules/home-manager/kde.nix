@@ -16,7 +16,7 @@
 
     hotkeys.commands."launch-alacritty" = {
       name = "Launch Alacritty";
-      key = "Meta+T";
+      key = "Meta+A";
       command = "alacritty";
     };
 
@@ -86,7 +86,7 @@
             };
           }
         ];
-        hiding = "autohide";
+        hiding = "none";
       }
       # Global menu at the top
       #{
@@ -122,8 +122,8 @@
     # Some low-level settings:
     #
     configFile = {
-      baloofilerc."Basic Settings"."Indexing-Enabled" = false;
-      kwinrc."org.kde.kdecoration2".ButtonsOnLeft = "SF";
+      #baloofilerc."Basic Settings"."Indexing-Enabled" = false;
+      #kwinrc."org.kde.kdecoration2".ButtonsOnLeft = "SF";
       kwinrc.Desktops.Number = {
         value = 8;
         # Forces kde to not change this value (even through the settings app).
