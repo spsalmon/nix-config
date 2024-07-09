@@ -10,6 +10,7 @@
       ../../modules/nixos/obs.nix
       ../../modules/nixos/openfortivpn.nix
       ../../modules/nixos/podman.nix
+      ../../modules/nixos/r2modman.nix
     ];
 
   environment.systemPackages = with pkgs; [
