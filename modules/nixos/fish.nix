@@ -1,5 +1,4 @@
-  
-{ lib, config, pkgs, ... }:
+ { lib, config, pkgs, ... }:
 {
   # Activate fish
   programs.fish.enable = true;

@@ -8,6 +8,7 @@
     ../../modules/nixos/steam.nix
     ../../modules/nixos/fish.nix
     ../../modules/nixos/kde.nix
+    ../../modules/nixos/bluetooth.nix
   ];
 
   # Activate direnv
