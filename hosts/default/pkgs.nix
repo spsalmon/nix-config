@@ -94,6 +94,7 @@
     qt6.full
     gnumake
     libgcc
+    fuse3
   ];
 
   programs.nix-ld.enable = true;
