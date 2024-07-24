@@ -11,6 +11,7 @@
       ../../modules/nixos/openfortivpn.nix
       ../../modules/nixos/podman.nix
       ../../modules/nixos/r2modman.nix
+      ../../modules/nixos/chromium.nix
     ];
 
   environment.systemPackages = with pkgs; [
