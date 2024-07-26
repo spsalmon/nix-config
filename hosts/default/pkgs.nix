@@ -95,6 +95,7 @@
     gnumake
     libgcc
     fuse
+    libGL
   ];
 
   programs.nix-ld.enable = true;
