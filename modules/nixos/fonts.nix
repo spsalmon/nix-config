@@ -10,7 +10,7 @@
       #noto-fonts
       #noto-fonts-cjk
       #noto-fonts-emoji
-      #nerdfonts
+      nerdfonts
       #twemoji-color-font
       #fira-code
       #fira-code-symbols
@@ -21,7 +21,7 @@
     defaultFonts = {
       serif = [ "IBM Plex Serif" ];
       sansSerif = [ "IBM Plex Sans" ];
-      monospace = [ "IBM Plex Mono" ];
+      monospace = [ "BlexMono Nerd Font Mono" ];
     };
   };
   
