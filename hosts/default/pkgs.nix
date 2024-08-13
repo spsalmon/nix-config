@@ -96,6 +96,7 @@
     libgcc
     fuse
     libGL
+    emacs
   ];
 
   programs.nix-ld.enable = true;
