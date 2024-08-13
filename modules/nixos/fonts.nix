@@ -21,7 +21,7 @@
     defaultFonts = {
       serif = [ "IBM Plex Serif" ];
       sansSerif = [ "IBM Plex Sans" ];
-      monospace = [ "BlexMono Nerd Font Mono" ];
+      monospace = [ "IBM Plex Mono" ];
     };
   };
   
