@@ -18,7 +18,5 @@
     godot_4
     krita
     audacity
-    python3
-    python312Packages.pip
   ];
 }
