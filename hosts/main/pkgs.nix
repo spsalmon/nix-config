@@ -18,6 +18,5 @@
     godot_4
     krita
     audacity
-    conda
   ];
 }
