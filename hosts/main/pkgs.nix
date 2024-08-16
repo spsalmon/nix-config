@@ -12,12 +12,12 @@
       ../../modules/nixos/podman.nix
       ../../modules/nixos/r2modman.nix
       ../../modules/nixos/chromium.nix
+      ../../modules/nixos/python.nix
     ];
 
   environment.systemPackages = with pkgs; [
     godot_4
     krita
     audacity
-    pyright
   ];
 }
