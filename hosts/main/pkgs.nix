@@ -19,5 +19,6 @@
     godot_4
     krita
     audacity
+    xclicker
   ];
 }
