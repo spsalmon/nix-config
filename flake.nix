@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     plasma-manager = {
       url = "github:pjones/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +20,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "sacha";
@@ -68,7 +70,12 @@
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit inputs;};
-        modules = [ 
+        modules = [
+          nixos-wsl.nixosModules.default
+          {
+            system.stateVersion = "24.05";
+            wsl.enable = true;
+          }
           {users.users."${username}".isNormalUser = true;}
           ./hosts/wsl/configuration.nix
           home-manager.nixosModules.home-manager
