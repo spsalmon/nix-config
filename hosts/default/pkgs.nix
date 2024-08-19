@@ -97,6 +97,7 @@
     fuse
     libGL
     emacs
+    nil
   ];
 
   programs.nix-ld.enable = true;
