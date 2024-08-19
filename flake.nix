@@ -65,12 +65,12 @@
         ];
       };
 
-      nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit inputs;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
-          ./hosts/vm/configuration.nix
+          ./hosts/wsl/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -80,7 +80,7 @@
 
             # This should point to your home.nix path of course. For an example
             # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./hosts/vm/home.nix;
+            home-manager.users."${username}" = import ./hosts/wsl/home.nix;
           }
         ];
       };
