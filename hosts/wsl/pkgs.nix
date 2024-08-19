@@ -9,4 +9,8 @@
       ../../modules/nixos/tmux.nix
     ];
 
+  programs.fish.shellAliases = {
+    temacs = "tmux new -s 'emacs' -d emacs";
+  };
+  
 }
