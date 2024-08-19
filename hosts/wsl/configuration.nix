@@ -10,7 +10,7 @@
 {
   imports = [
     # include NixOS-WSL modules
-    <nixos-wsl/modules>
+    ./pkgs.nix
   ];
 
   wsl.enable = true;
