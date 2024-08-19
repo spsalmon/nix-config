@@ -73,7 +73,7 @@
         modules = [
           nixos-wsl.nixosModules.default
           {
-            system.stateVersion = "24.05";
+            system.stateVersion = "23.11";
             wsl.enable = true;
           }
           {users.users."${username}".isNormalUser = true;}
