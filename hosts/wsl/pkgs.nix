@@ -5,6 +5,7 @@
   imports =
     [
       ../default/pkgs.nix
+      ../../modules/nixos/python.nix
     ];
 
 }
