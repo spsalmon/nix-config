@@ -87,7 +87,6 @@
     libinput
     git
     alacritty
-    fuzzel
     rar
     unrar
     openfortivpn
