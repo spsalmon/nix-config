@@ -12,5 +12,9 @@
   programs.fish.shellAliases = {
     temacs = "tmux new -s 'emacs' -d emacs";
   };
-  
+
+  environment.systemPackages = with pkgs; [
+    samba
+  ];
+
 }
