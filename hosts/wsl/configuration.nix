@@ -11,7 +11,7 @@
   imports = [
     # include NixOS-WSL modules
     ./pkgs.nix
-    inputs.home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.wsl
   ];
 
   wsl.enable = true;
