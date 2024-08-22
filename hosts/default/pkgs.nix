@@ -70,9 +70,8 @@
 
   home-manager = {
     # also pass inputs to home-manager modules
-    
-    extraSpecialArgs = {inherit inputs;
-                        inherit username;};
+    users = "${username}";
+    extraSpecialArgs = {inherit inputs username;};
     };
 
   # Allow unfree packages
