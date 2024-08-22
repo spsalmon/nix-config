@@ -81,7 +81,8 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+
             # This should point to your home.nix path of course. For an example
             # of this see ./home.nix in this directory.
             home-manager.users."${username}" = import ./hosts/wsl/home.nix;

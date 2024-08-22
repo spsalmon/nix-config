@@ -1,9 +1,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-  home.username = "nixos";
-  home.homeDirectory = "/home/nixos";
-
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
