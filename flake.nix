@@ -27,7 +27,8 @@
     
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit inputs;};
+        inherit username;
+        specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
           ./hosts/default/configuration.nix
