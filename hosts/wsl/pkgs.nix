@@ -14,7 +14,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    samba
+    cifs-utils
   ];
 
 }
