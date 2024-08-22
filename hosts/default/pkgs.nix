@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, ... }:
+{ lib, config, pkgs, inputs, username, ... }:
 
 {
   imports = [
@@ -63,19 +63,15 @@
   environment.extraOutputsToInstall = [ "dev" ]; 
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.sacha = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "sacha";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
   home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
-    users = {
-      "sacha" = import ./home.nix;
     };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

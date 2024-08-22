@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, username, ... }:
 
 {
   imports =
@@ -7,8 +7,8 @@
     ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "sacha";
-  home.homeDirectory = "/home/sacha";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
 
   programs.fish = {
     enable = true;
