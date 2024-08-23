@@ -48,7 +48,8 @@
       
       nixosConfigurations.gaming-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit inputs;};
+        inherit username;
+        specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
           ./hosts/gaming-laptop/configuration.nix
@@ -68,7 +69,8 @@
 
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs.inputs = inputs;
+        inherit username;
+        specialArgs = {inherit inputs username;};
         modules = [
           nixos-wsl.nixosModules.default
           {
@@ -82,7 +84,6 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
 
             # This should point to your home.nix path of course. For an example
             # of this see ./home.nix in this directory.
@@ -93,7 +94,8 @@
 
       nixosConfigurations.main = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit inputs;};
+        inherit username;
+        specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
           ./hosts/main/configuration.nix
@@ -113,7 +115,8 @@
 
       nixosConfigurations.lab = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit inputs;};
+        inherit username;
+        specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
           ./hosts/lab/configuration.nix
