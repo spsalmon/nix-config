@@ -3,6 +3,10 @@
   # Activate fish
   programs.fish.enable = true;
 
+  programs.fish.promptInit = ''
+    ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+  '';                                       
+
   programs.bash = {
   interactiveShellInit = ''
     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]

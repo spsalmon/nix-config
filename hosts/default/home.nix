@@ -36,10 +36,8 @@
     pkgs.discord
     pkgs.pavucontrol
     pkgs.firefox
-    pkgs.vscodium
     pkgs.lshw
     pkgs.keepassxc
-    pkgs.transmission
     pkgs.zip
     pkgs.unzip
     pkgs.networkmanager
