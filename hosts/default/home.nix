@@ -1,10 +1,6 @@
 { config, pkgs, inputs, username, ... }:
 
 {
-  imports =
-    [
-      ../../modules/home-manager/kde.nix
-    ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "${username}";

@@ -4,5 +4,6 @@
   imports =
     [
       ../default/home.nix
+      ../../modules/home-manager/kde.nix
     ];
 }
