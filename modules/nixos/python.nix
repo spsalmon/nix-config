@@ -8,6 +8,10 @@
   # Required to make mamba-managed Python run without an FHS environment
   programs.nix-ld.enable = true;
 
+  environment.sessionVariables = {
+    # Personal preference, default is ~/.micromamba
+    MAMBA_ROOT_PREFIX = "~/micromamba";
+  };
   programs.fish = {
     interactiveShellInit = ''
       mkdir -p $MAMBA_ROOT_PREFIX
