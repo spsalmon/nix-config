@@ -14,6 +14,7 @@
   ];
 
   wsl.enable = true;
+  wsl.defaultUser = "${username}";
 
   # mount cluster drives
 
