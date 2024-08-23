@@ -20,14 +20,13 @@
 
   outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, ... }@inputs:
     let
-      system = "x86_64-linux";
       username = "sacha";
+      system = "x86_64-linux";
     in
     {
     
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         inherit system;
-        inherit username;
         specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
@@ -48,7 +47,6 @@
       
       nixosConfigurations.gaming-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        inherit username;
         specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
@@ -69,7 +67,6 @@
 
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         inherit system;
-        inherit username;
         specialArgs = {inherit inputs username;};
         modules = [
           nixos-wsl.nixosModules.default
@@ -94,7 +91,6 @@
 
       nixosConfigurations.main = nixpkgs.lib.nixosSystem {
         inherit system;
-        inherit username;
         specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
@@ -115,7 +111,6 @@
 
       nixosConfigurations.lab = nixpkgs.lib.nixosSystem {
         inherit system;
-        inherit username;
         specialArgs = {inherit inputs username;};
         modules = [ 
           {users.users."${username}".isNormalUser = true;}

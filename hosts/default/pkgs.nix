@@ -70,7 +70,6 @@
 
   home-manager = {
     # also pass inputs to home-manager modules
-    users = "${username}";
     extraSpecialArgs = {inherit inputs username;};
     };
 
