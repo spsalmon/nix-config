@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, username, ... }:
 {
   environment.systemPackages = with pkgs; [
     (python312.withPackages(ps: with ps; [ numpy matplotlib python-lsp-server pyls-isort python-lsp-ruff python-lsp-black ipykernel jupyter-core]))
@@ -10,7 +10,7 @@
 
   environment.sessionVariables = {
     # Personal preference, default is ~/.micromamba
-    MAMBA_ROOT_PREFIX = "~/micromamba";
+    MAMBA_ROOT_PREFIX = "/home/${username}/micromamba";
   };
   programs.fish = {
     interactiveShellInit = ''
