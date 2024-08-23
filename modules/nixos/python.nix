@@ -10,7 +10,7 @@
 
   environment.sessionVariables = {
     # Personal preference, default is ~/.micromamba
-    MAMBA_ROOT_PREFIX = "~/micromamba";
+    MAMBA_ROOT_PREFIX = "/home/sacha/micromamba";
   };
   programs.fish = {
     interactiveShellInit = ''
