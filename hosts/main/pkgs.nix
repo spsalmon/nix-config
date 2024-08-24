@@ -12,6 +12,7 @@
       ../../modules/nixos/r2modman.nix
       ../../modules/nixos/chromium.nix
       ../../modules/nixos/python.nix
+      ../../modules/nixos/nix-alien.nix
     ];
 
   environment.systemPackages = with pkgs; [
@@ -19,6 +20,5 @@
     krita
     audacity
     xclicker
-    nexusmods-app
   ];
 }
