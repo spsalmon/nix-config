@@ -19,5 +19,6 @@
     krita
     audacity
     xclicker
+    nexusmods-app
   ];
 }
