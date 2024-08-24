@@ -24,7 +24,6 @@
       system = "x86_64-linux";
     in
     {
-    
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit inputs username;};
