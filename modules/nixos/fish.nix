@@ -26,4 +26,10 @@
     fishPlugins.grc
     grc
   ];
+
+  # aliases
+  programs.fish.shellAliases = {
+    temacs = "tmux new -s 'emacs' -d emacs";
+    nix-alien = "nix run 'github:thiagokokada/nix-alien#nix-alien' --";
+  };
 }

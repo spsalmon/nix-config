@@ -9,6 +9,7 @@
     ../../modules/nixos/fish.nix
     ../../modules/nixos/kde.nix
     ../../modules/nixos/bluetooth.nix
+    ../../modules/nixos/tmux.nix
   ];
 
   # Activate direnv
