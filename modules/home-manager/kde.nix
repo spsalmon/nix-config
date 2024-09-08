@@ -16,7 +16,7 @@
 
     hotkeys.commands."launch-alacritty" = {
       name = "Launch Alacritty";
-      key = "Meta+A";
+      key = "Meta+T";
       command = "alacritty";
     };
 
@@ -117,6 +117,15 @@
       };
     };
 
+    # touchpad settings
+    input.touchpads = [
+      {
+      disableWhileTyping = true;
+      enable = true;
+      naturalScroll = true;
+      tapToClick = true
+      }
+    ];
 
     #
     # Some low-level settings:
