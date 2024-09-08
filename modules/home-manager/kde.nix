@@ -120,10 +120,13 @@
     # touchpad settings
     input.touchpads = [
       {
-      disableWhileTyping = true;
-      enable = true;
-      naturalScroll = true;
-      tapToClick = true
+        disableWhileTyping = true;
+        enable = true;
+        naturalScroll = true;
+        tapToClick = true;
+        vendorId = "0";
+        productId = "0";
+        name = "0";
       }
     ];
 
