@@ -124,9 +124,9 @@
         enable = true;
         naturalScroll = true;
         tapToClick = true;
-        vendorId = "0";
-        productId = "0";
-        name = "0";
+        vendorId = "04f3";
+        productId = "3049";
+        name = "ELAN1200:00 04F3:3049 Touchpad";
       }
     ];
 
