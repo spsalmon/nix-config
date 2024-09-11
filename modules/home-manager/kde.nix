@@ -119,6 +119,7 @@
 
     # touchpad settings
     input.touchpads = [
+      # touchpad setting for gaming laptop
       {
         disableWhileTyping = true;
         enable = true;
@@ -129,6 +130,8 @@
         name = "ELAN1200:00 04F3:3049 Touchpad";
       }
     ];
+
+    powerdevil.AC.autoSuspend.action = "nothing";
 
     #
     # Some low-level settings:
