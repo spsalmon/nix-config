@@ -34,6 +34,7 @@
   # environment.
   home.packages = [
     pkgs.discord
+    pkgs.vesktop
     pkgs.pavucontrol
     pkgs.firefox
     pkgs.lshw
