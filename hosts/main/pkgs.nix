@@ -13,6 +13,7 @@
       ../../modules/nixos/chromium.nix
       ../../modules/nixos/python.nix
       ../../modules/nixos/osu.nix
+      ../../modules/nixos/lutris.nix
     ];
 
   environment.systemPackages = with pkgs; [
