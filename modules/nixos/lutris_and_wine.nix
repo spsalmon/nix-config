@@ -2,6 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     lutris
-    wineWowPackages.stable
+    wineWowPackages.unstableFull
   ];
 }
