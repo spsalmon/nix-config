@@ -3,7 +3,8 @@
   # These are all the dependencies needed to install osu stable using the script at
   # https://github.com/NelloKudo/osu-winello
   environment.systemPackages = with pkgs; [
-    gnome.zenity
+    zenity
     inputs.umu.packages.${pkgs.system}.umu
+    bottles
   ];
 }
