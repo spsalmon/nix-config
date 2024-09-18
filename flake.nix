@@ -16,9 +16,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    umu= {
+      url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, umu,... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
