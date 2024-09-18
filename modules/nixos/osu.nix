@@ -4,7 +4,6 @@
   # https://github.com/NelloKudo/osu-winello
   environment.systemPackages = with pkgs; [
     gnome.zenity
+    inputs.umu.packages.${pkgs.system}.umu
   ];
-
-  environment.systemPackages = [inputs.umu.packages.${pkgs.system}.umu];
 }
