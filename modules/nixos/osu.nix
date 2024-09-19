@@ -5,6 +5,6 @@
   environment.systemPackages = with pkgs; [
     zenity
     inputs.umu.packages.${pkgs.system}.umu
-    bottles
+    mesa
   ];
 }
