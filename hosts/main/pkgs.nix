@@ -24,4 +24,9 @@
     audacity
     xclicker
   ];
+
+  # enable the open source kernel drivers as they are supported on my 4060
+  hardware.nvidia = {
+    open = true;
+  }
 }
