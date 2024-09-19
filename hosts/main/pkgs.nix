@@ -23,7 +23,10 @@
     krita
     audacity
     xclicker
+    clinfo
+    gpu-viewer
   ];
+  
 
   # enable the open source kernel drivers as they are supported on my 4060
   hardware.nvidia = {
