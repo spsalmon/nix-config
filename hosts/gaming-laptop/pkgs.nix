@@ -10,6 +10,6 @@
     ];
 
   hardware.nvidia = {
-    open = true;
+    open = false;
   };
 }
