@@ -8,4 +8,8 @@
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/joycon.nix
     ];
+
+  hardware.nvidia = {
+    open = true;
+  };
 }
