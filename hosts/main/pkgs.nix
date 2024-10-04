@@ -16,6 +16,7 @@
       ../../modules/nixos/osu_lazer.nix
       ../../modules/nixos/lutris_and_wine.nix
       ../../modules/nixos/daw.nix
+      ../../modules/nixos/gimp.nix
     ];
 
   environment.systemPackages = with pkgs; [
