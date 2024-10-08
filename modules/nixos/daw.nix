@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     reaper
+    ardour
 
     # synths
     vital
