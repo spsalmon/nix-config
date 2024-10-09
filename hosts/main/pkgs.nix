@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, username,... }:
 
 {
   imports =
@@ -15,7 +15,7 @@
       ../../modules/nixos/osu.nix
       ../../modules/nixos/osu_lazer.nix
       ../../modules/nixos/lutris_and_wine.nix
-      ../../modules/nixos/daw.nix
+      ../../modules/nixos/music.nix
       ../../modules/nixos/gimp.nix
     ];
 

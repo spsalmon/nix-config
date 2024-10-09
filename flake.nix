@@ -21,9 +21,11 @@
       url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    musnix  = { url = "github:musnix/musnix"; };
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, umu,... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, umu, musnix,... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
@@ -99,6 +101,7 @@
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
           ./hosts/main/configuration.nix
+          inputs.musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
