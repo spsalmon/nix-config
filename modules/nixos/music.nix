@@ -13,7 +13,7 @@
     wineWowPackages.stable
 
     # synths
-    surge-xt
+    surge-XT
     vital
   ];
 }
