@@ -17,6 +17,7 @@
       ../../modules/nixos/lutris_and_wine.nix
       ../../modules/nixos/music.nix
       ../../modules/nixos/gimp.nix
+      ../../modules/nixos/emulators.nix
     ];
 
   environment.systemPackages = with pkgs; [
