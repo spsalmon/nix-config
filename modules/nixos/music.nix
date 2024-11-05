@@ -16,6 +16,9 @@
     surge-XT
     vital
 
+    # lsp
+    lsp-plugins
+
     # drums
     hydrogen
     drumgizmo
