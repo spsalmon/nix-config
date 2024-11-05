@@ -15,5 +15,10 @@
     # synths
     surge-XT
     vital
+
+    # drums
+    hydrogen
+    drumgizmo
+    drumkv1
   ];
 }
