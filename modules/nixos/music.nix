@@ -15,5 +15,13 @@
     # synths
     surge-XT
     vital
+
+    # lsp
+    lsp-plugins
+
+    # drums
+    hydrogen
+    drumgizmo
+    drumkv1
   ];
 }
