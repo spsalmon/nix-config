@@ -7,7 +7,8 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/fish.nix
-    ../../modules/nixos/kde.nix
+    #../../modules/nixos/kde.nix
+    ../../modules/nixos/gnome.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/tmux.nix
   ];
