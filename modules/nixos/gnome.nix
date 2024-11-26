@@ -5,10 +5,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Adding some GNOME extensions
-  environment.systemPackages = with pkgs.gnomeExtensions; [
-    blur-my-shell
-    pkgs.dconf2nix
+  # Adding dconf2nix to convert stuff easily
+  environment.systemPackages = with pkgs; [
+    dconf2nix
   ];
   
   # Remove the bloat
