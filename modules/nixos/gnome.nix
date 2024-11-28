@@ -16,14 +16,17 @@
   # Activate dconf
   programs.dconf.enable = true;
 
-  # Change mouse sensitivity on the GDM login screen
-  home-manager.users.gdm = { lib, ... }: {
-    dconf.settings = {
-      "desktop/peripherals/mouse" = {
-        accel-profile = "flat";
-        speed = -0.55;
-      };
+  # Change mouse sensitivity in gdm login screen
+  systemd.gdm.services.sensitivity = {
+    enable = true;
+    description = "change the mouse sensitivity on the GDM login screen";
+    unitConfig = {
+      type = "simple";
     };
+    serviceConfig = {
+      ExecStart = "/run/current-system/sw/bin/gsettings set org.gnome.desktop.peripherals.mouse speed '-0.55'";
+    };
+    wantedBy = [ "multi-user.target" ];
   };
   
   # Remove the bloat
