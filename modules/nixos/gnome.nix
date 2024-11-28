@@ -17,10 +17,12 @@
   programs.dconf.enable = true;
 
   # Change mouse sensitivity on the GDM login screen
-  home-manager.users.gdm.dconf.settings = {
-    "desktop/peripherals/mouse" = {
-      accel-profile = "flat";
-      speed = -0.55;
+  home-manager.users.gdm = { lib, ... }: {
+    dconf.settings = {
+      "desktop/peripherals/mouse" = {
+        accel-profile = "flat";
+        speed = -0.55;
+      };
     };
   };
   
