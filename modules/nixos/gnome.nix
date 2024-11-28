@@ -17,7 +17,8 @@
   programs.dconf.enable = true;
 
   # Change mouse sensitivity in gdm login screen
-  systemd.gdm.services.sensitivity = {
+  systemd.user.services.gdmsensitivity = {
+    user = "gdm";
     enable = true;
     description = "change the mouse sensitivity on the GDM login screen";
     unitConfig = {
