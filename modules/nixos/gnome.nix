@@ -15,6 +15,19 @@
 
   # Activate dconf
   programs.dconf.enable = true;
+
+  # Change mouse sensitivity on the GDM login screen
+  programs.dconf.profiles.gdm = {
+    databases = [{
+      lockAll = true;
+      settings = {
+        "desktop/peripherals/mouse" = {
+          accel-profile = "flat";
+          speed = -0.55;
+        };
+      };
+    }];
+  };
   
   # Remove the bloat
   environment.gnome.excludePackages = with pkgs; [
