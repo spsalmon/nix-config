@@ -3,7 +3,7 @@
   ...
 }: rec {
   home.packages = with pkgs.gnomeExtensions; [
-    blur-my-shell
+    # blur-my-shell
     clipboard-indicator
     dash-to-dock
   ];
@@ -14,5 +14,39 @@
   dconf.settings = {
     # First we enable every extension that we install above
     "org/gnome/shell".enabled-extensions = (map (extension: extension.extensionUuid) home.packages);
+
+    "shell" = {
+      disabled-extensions = [ "blur-my-shell@aunetx" ];
+      enabled-extensions = [ "clipboard-indicator@tudmotu.com" "dash-to-dock@micxgx.gmail.com" ];
+      favorite-apps = [ "firefox.desktop" "vesktop.desktop" "Alacritty.desktop" "emacs.desktop" "org.gnome.Nautilus.desktop" "steam.desktop" ];
+      last-selected-power-profile = "performance";
+      welcome-dialog-last-shown-version = "45.4";
+    };
+
+    "shell/extensions/dash-to-dock" = {
+      always-center-icons = false;
+      apply-custom-theme = false;
+      background-opacity = 0.95;
+      click-action = "minimize-or-previews";
+      custom-theme-shrink = true;
+      dash-max-icon-size = 48;
+      dock-position = "LEFT";
+      extend-height = true;
+      height-fraction = 0.9;
+      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+      middle-click-action = "launch";
+      multi-monitor = true;
+      preferred-monitor = -2;
+      preferred-monitor-by-connector = "HDMI-1";
+      preview-size-scale = 0.33;
+      running-indicator-style = "DOTS";
+      scroll-action = "cycle-windows";
+      shift-click-action = "minimize";
+      shift-middle-click-action = "launch";
+      show-apps-at-top = true;
+      show-show-apps-button = false;
+      show-trash = false;
+      transparency-mode = "FIXED";
+    };
   };
 }
