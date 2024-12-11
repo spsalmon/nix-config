@@ -14,25 +14,10 @@
   # Adding some packages to make life easier
   environment.systemPackages = with pkgs; [
     dconf2nix
-    gsettings-desktop-schemas
   ];
 
   # Activate dconf
   programs.dconf.enable = true;
-
-  # Change mouse sensitivity in gdm login screen
-  # systemd.services.gdmsensitivity = {
-  #   enable = true;
-  #   description = "change the mouse sensitivity on the GDM login screen";
-  #   unitConfig = {
-  #     type = "simple";
-  #   };
-  #   serviceConfig = {
-  #     ExecStart = "/run/current-system/sw/bin/gsettings set org.gnome.desktop.peripherals.mouse speed '-0.55'";
-  #     User = "gdm";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  # };
   
   # Remove the bloat
   environment.gnome.excludePackages = with pkgs; [
