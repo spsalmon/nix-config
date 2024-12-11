@@ -8,9 +8,10 @@
   # Disable autosuspend during login
   services.xserver.displayManager.gdm.autoSuspend = false;
 
-  # Adding dconf2nix to convert stuff easily
+  # Adding some packages to make life easier
   environment.systemPackages = with pkgs; [
     dconf2nix
+    gsettings-desktop-schemas
   ];
 
   # Activate dconf
