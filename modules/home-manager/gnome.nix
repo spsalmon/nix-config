@@ -15,15 +15,12 @@
     # First we enable every extension that we install above
     "org/gnome/shell".enabled-extensions = (map (extension: extension.extensionUuid) home.packages);
 
-    "shell" = {
+    "org/gnome/shell" = {
       disabled-extensions = [ "blur-my-shell@aunetx" ];
-      enabled-extensions = [ "clipboard-indicator@tudmotu.com" "dash-to-dock@micxgx.gmail.com" ];
       favorite-apps = [ "firefox.desktop" "vesktop.desktop" "Alacritty.desktop" "emacs.desktop" "org.gnome.Nautilus.desktop" "steam.desktop" ];
-      last-selected-power-profile = "performance";
-      welcome-dialog-last-shown-version = "45.4";
     };
 
-    "shell/extensions/dash-to-dock" = {
+    "org/gnome/shell/extensions/dash-to-dock" = {
       always-center-icons = false;
       apply-custom-theme = false;
       background-opacity = 0.95;
