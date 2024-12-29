@@ -45,5 +45,8 @@
       show-trash = false;
       transparency-mode = "FIXED";
     };
+
+    # Add a maximize and minimize button by default
+    "org/gnome/desktop/wm/preferences".button-layout = "minimize,maximize,close";
   };
 }
