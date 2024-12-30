@@ -47,6 +47,6 @@
     };
 
     # Add a maximize and minimize button by default
-    "org/gnome/desktop/wm/preferences".button-layout = "minimize,maximize,close";
+    "org/gnome/desktop/wm/preferences".button-layout = "menu:minimize,maximize,close";
   };
 }
