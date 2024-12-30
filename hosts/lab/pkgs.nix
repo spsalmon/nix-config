@@ -8,6 +8,7 @@
       ../../modules/nixos/macchanger.nix
       ../../modules/nixos/openfortivpn.nix
       ../../modules/nixos/docker.nix
+      ../../modules/lutris_and_wine.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages;
