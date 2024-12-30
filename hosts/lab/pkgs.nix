@@ -7,6 +7,7 @@
       ../../modules/nixos/bootloader.nix
       ../../modules/nixos/macchanger.nix
       ../../modules/nixos/openfortivpn.nix
+      ../../modules/nixos/podman.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages;
