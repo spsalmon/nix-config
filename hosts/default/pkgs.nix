@@ -10,7 +10,6 @@
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/tmux.nix
-    ../../modules/nixos/quickemu.nix
   ];
 
   # Activate direnv
