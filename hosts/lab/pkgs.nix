@@ -9,7 +9,6 @@
       ../../modules/nixos/openfortivpn.nix
       ../../modules/nixos/docker.nix
       ../../modules/nixos/lutris_and_wine.nix
-      ../../modules/nixos/bottles.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages;
