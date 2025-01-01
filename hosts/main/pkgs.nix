@@ -18,11 +18,11 @@
       ../../modules/nixos/music.nix
       ../../modules/nixos/gimp.nix
       ../../modules/nixos/emulators.nix
+      ../../modules/nixos/krita.nix
     ];
 
   environment.systemPackages = with pkgs; [
     godot_4
-    krita
     audacity
     xclicker
     clinfo
