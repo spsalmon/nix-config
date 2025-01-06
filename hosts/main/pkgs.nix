@@ -12,7 +12,6 @@
       ../../modules/nixos/r2modman.nix
       ../../modules/nixos/chromium.nix
       ../../modules/nixos/python.nix
-      ../../modules/nixos/osu.nix
       ../../modules/nixos/osu_lazer.nix
       ../../modules/nixos/lutris_and_wine.nix
       ../../modules/nixos/music.nix

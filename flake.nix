@@ -17,15 +17,15 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    umu= {
-      url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # umu= {
+    #   url = "git+https://github.com/Open-Wine-Components/umus-launcher/?dir=packaging\/nix&submodules=1";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     musnix  = { url = "github:musnix/musnix"; };
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, umu, musnix,... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, musnix,... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
