@@ -20,6 +20,7 @@
       ../../modules/nixos/krita.nix
       ../../modules/nixos/docker.nix
       # ../../modules/nixos/quickemu.nix
+      ../../modules/nixos/virtualbox.nix
     ];
 
   environment.systemPackages = with pkgs; [
