@@ -19,7 +19,7 @@
       ../../modules/nixos/emulators.nix
       ../../modules/nixos/krita.nix
       ../../modules/nixos/docker.nix
-      ../../modules/nixos/quickemu.nix
+      # ../../modules/nixos/quickemu.nix
     ];
 
   environment.systemPackages = with pkgs; [
