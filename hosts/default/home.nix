@@ -1,6 +1,10 @@
 { config, pkgs, inputs, username, ... }:
 
 {
+  imports =
+    [
+      ../../modules/home-manager/direnv.nix
+    ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "${username}";
@@ -10,6 +14,9 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+    '';
+    shellInit = ''
+      direnv hook fish | source
     '';
   };
 
