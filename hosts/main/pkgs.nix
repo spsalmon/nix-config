@@ -21,6 +21,7 @@
       ../../modules/nixos/docker.nix
       # ../../modules/nixos/quickemu.nix
       ../../modules/nixos/virtualbox.nix
+      ../../modules/nixos/vscode.nix
     ];
 
   environment.systemPackages = with pkgs; [
