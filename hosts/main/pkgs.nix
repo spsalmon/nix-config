@@ -34,7 +34,8 @@
   
 
   # enable the open source kernel drivers as they are supported on my 4060
+  # according to some people, this could cause problems with cuda, so I'm disabling it
   hardware.nvidia = {
-    open = true;
+    open = false;
   };
 }
