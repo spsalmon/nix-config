@@ -94,6 +94,7 @@
     libGL
     emacs
     nil
+    appimage-run
   ];
   
   # Allow experimental features
