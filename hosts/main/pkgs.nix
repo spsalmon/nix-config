@@ -22,6 +22,7 @@
       # ../../modules/nixos/quickemu.nix
       ../../modules/nixos/virtualbox.nix
       ../../modules/nixos/vscode.nix
+      ../../modules/nixos/secure_boot.nix
     ];
 
   environment.systemPackages = with pkgs; [

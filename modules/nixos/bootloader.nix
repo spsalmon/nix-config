@@ -18,7 +18,7 @@
     '';
 
   boot.plymouth = {
-    enable = true;
+    enable = false;
     font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
     themePackages = [ pkgs.catppuccin-plymouth ];
     theme = "catppuccin-macchiato";
