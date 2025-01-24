@@ -9,6 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     plasma-manager = {
@@ -25,7 +33,7 @@
     musnix  = { url = "github:musnix/musnix"; };
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, musnix,... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, musnix, lanzaboote, ... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
@@ -103,6 +111,7 @@
           ./hosts/main/configuration.nix
           inputs.musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
+          lanzaboote.nixosModules.lanzaboote
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -113,6 +122,25 @@
             # of this see ./home.nix in this directory.
             home-manager.users."${username}" = import ./hosts/main/home.nix;
           }
+          
+          ({ pkgs, lib, ... }: {
+
+            environment.systemPackages = [
+              # For debugging and troubleshooting Secure Boot.
+              pkgs.sbctl
+            ];
+
+            # Lanzaboote currently replaces the systemd-boot module.
+            # This setting is usually set to true in configuration.nix
+            # generated at installation time. So we force it to false
+            # for now.
+            boot.loader.systemd-boot.enable = lib.mkForce false;
+
+            boot.lanzaboote = {
+              enable = true;
+              pkiBundle = "/var/lib/sbctl";
+            };
+          })
         ];
       };
 
