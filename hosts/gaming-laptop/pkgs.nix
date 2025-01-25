@@ -9,6 +9,7 @@
       ../../modules/nixos/joycon.nix
       ../../modules/nixos/emulators.nix
       ../../modules/nixos/controllers.nix
+      ../../modules/nixos/qbittorrent.nix
     ];
 
   hardware.nvidia = {
