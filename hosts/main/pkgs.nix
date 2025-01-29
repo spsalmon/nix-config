@@ -23,6 +23,7 @@
       ../../modules/nixos/virtualbox.nix
       ../../modules/nixos/vscode.nix
       ../../modules/nixos/secure_boot.nix
+      ../../modules/nixos/ventoy.nix
     ];
 
   environment.systemPackages = with pkgs; [
