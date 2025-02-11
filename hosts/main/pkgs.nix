@@ -24,6 +24,7 @@
       ../../modules/nixos/vscode.nix
       ../../modules/nixos/secure_boot.nix
       ../../modules/nixos/ventoy.nix
+      ../../modules/nixos/printing_and_scanning.nix
     ];
 
   environment.systemPackages = with pkgs; [
