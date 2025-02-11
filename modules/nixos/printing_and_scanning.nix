@@ -4,5 +4,6 @@
     sane-airscan
     epsonscan2
     epson-escpr
+    xsane
   ];
 }
