@@ -95,6 +95,7 @@
     emacs
     nil
     appimage-run
+    parallel-disk-usage
   ];
   
   # Allow experimental features
