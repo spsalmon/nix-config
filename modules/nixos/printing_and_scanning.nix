@@ -7,6 +7,6 @@
     xsane
   ];
 
-  services.printing = { enable = true; drivers = [ pkgs.epson-escpr ]; };
+  services.printing = { enable = true; drivers = [ pkgs.epson-escpr pkgs.brlaser]; };
   services.avahi = { enable = true; nssmdns4 = true; };
 }
