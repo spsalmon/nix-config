@@ -26,6 +26,7 @@
       ../../modules/nixos/ventoy.nix
       ../../modules/nixos/printing_and_scanning.nix
       ../../modules/nixos/zoom.nix
+      ../../modules/nixos/cad.nix
     ];
 
   environment.systemPackages = with pkgs; [
