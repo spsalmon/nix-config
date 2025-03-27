@@ -15,7 +15,7 @@
       ../../modules/nixos/osu_lazer.nix
       ../../modules/nixos/lutris_and_wine.nix
       ../../modules/nixos/music.nix
-      # ../../modules/nixos/gimp.nix
+      ../../modules/nixos/gimp.nix
       ../../modules/nixos/emulators.nix
       ../../modules/nixos/krita.nix
       ../../modules/nixos/docker.nix
