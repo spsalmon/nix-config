@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     dconf2nix
     gnome-tweaks
+    gparted
   ];
 
   # Activate dconf
@@ -26,7 +27,6 @@
     evince
     # file-roller
     geary
-    gnome-disk-utility
     # seahorse
     # sushi
     # sysprof
