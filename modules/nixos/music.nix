@@ -8,8 +8,8 @@
     #ardour
 
     # Support for Windows VST2/VST3 plugins
-    yabridge
-    yabridgectl
+    #yabridge
+    #yabridgectl
     wineWowPackages.stable
 
     # synths
