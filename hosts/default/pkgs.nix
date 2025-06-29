@@ -95,6 +95,7 @@
     emacs
     nil
     appimage-run
+    efitools
     #parallel-disk-usage
   ];
   
