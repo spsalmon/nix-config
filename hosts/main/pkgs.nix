@@ -28,6 +28,7 @@
       ../../modules/nixos/zoom.nix
       ../../modules/nixos/cad.nix
       ../../modules/nixos/cockatrice.nix
+      ../../modules/nixos/keyboard.nix
     ];
 
   environment.systemPackages = with pkgs; [
