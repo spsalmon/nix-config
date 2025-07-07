@@ -29,6 +29,7 @@
       ../../modules/nixos/cad.nix
       ../../modules/nixos/cockatrice.nix
       ../../modules/nixos/keyboard.nix
+      ../../modules/nixos/mtg.nix
     ];
 
   environment.systemPackages = with pkgs; [
