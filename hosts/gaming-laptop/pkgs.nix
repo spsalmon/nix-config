@@ -11,6 +11,7 @@
       ../../modules/nixos/controllers.nix
       ../../modules/nixos/qbittorrent.nix
       ../../modules/nixos/virtualbox.nix
+      ../../modules/nixos/mtg.nix
     ];
 
   hardware.nvidia = {
