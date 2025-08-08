@@ -2,14 +2,14 @@
 {
   # Activate GNOME
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Disable autosuspend during login
-  services.xserver.displayManager.gdm.autoSuspend = false;
+  services.displayManager.gdm.autoSuspend = false;
 
   # Disable wayland
-  services.xserver.displayManager.gdm.wayland = false;
+  services.displayManager.gdm.wayland = false;
 
   # Adding some packages to make life easier
   environment.systemPackages = with pkgs; [
