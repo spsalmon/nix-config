@@ -12,6 +12,7 @@
       ../../modules/nixos/qbittorrent.nix
       ../../modules/nixos/virtualbox.nix
       ../../modules/nixos/mtg.nix
+      ../../modules/nixos/godot.nix
     ];
 
   hardware.nvidia = {

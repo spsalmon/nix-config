@@ -30,10 +30,10 @@
       ../../modules/nixos/cockatrice.nix
       ../../modules/nixos/keyboard.nix
       ../../modules/nixos/mtg.nix
+      ../../modules/nixos/godot.nix
     ];
 
   environment.systemPackages = with pkgs; [
-    godot_4
     audacity
     xclicker
     clinfo
