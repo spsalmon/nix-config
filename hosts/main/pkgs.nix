@@ -31,6 +31,7 @@
       ../../modules/nixos/keyboard.nix
       ../../modules/nixos/mtg.nix
       ../../modules/nixos/godot.nix
+      ../../modules/nixos/qbittorrent.nix
     ];
 
   environment.systemPackages = with pkgs; [
