@@ -12,6 +12,8 @@
     ../../modules/nixos/tmux.nix
   ];
 
+  nix.settings.download-buffer-size = 5524288000;
+
   # Activate direnv
   programs.direnv.enable = true;
   # Setting to run AppImage files
@@ -87,7 +89,6 @@
     rar
     unrar
     openfortivpn
-    qt6
     gnumake
     libgcc
     fuse
