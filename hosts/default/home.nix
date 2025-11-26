@@ -21,10 +21,11 @@
   };
 
   # git setup
-  programs.git = {
-    enable = true;
-    userName = "spsalmon";
-    userEmail = "psalmonsacha@gmail.com";
+  programs.git.enable = true;
+
+  programs.git.settings.user = {
+    name = "spsalmon";
+    email = "psalmonsacha@gmail.com";
   };
 
   # This value determines the Home Manager release that your configuration is

@@ -19,21 +19,10 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
-    plasma-manager = {
-      url = "github:pjones/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-
-    # umu= {
-    #   url = "git+https://github.com/Open-Wine-Components/umus-launcher/?dir=packaging\/nix&submodules=1";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     musnix  = { url = "github:musnix/musnix"; };
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, nixos-wsl, musnix, lanzaboote, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, ... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
@@ -50,7 +39,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+            home-manager.sharedModules = [];
 
             # This should point to your home.nix path of course. For an example
             # of this see ./home.nix in this directory.
@@ -70,7 +59,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+            home-manager.sharedModules = [];
 
             # This should point to your home.nix path of course. For an example
             # of this see ./home.nix in this directory.
@@ -155,7 +144,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+            home-manager.sharedModules = [];
 
             # This should point to your home.nix path of course. For an example
             # of this see ./home.nix in this directory.
