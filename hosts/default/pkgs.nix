@@ -87,7 +87,7 @@
     rar
     unrar
     openfortivpn
-    qt6.full
+    qt6
     gnumake
     libgcc
     fuse
