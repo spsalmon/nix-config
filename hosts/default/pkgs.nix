@@ -10,6 +10,7 @@
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/tmux.nix
+    ../../modules/nixos/tailscale.nix
   ];
 
   nix.settings.download-buffer-size = 5524288000;
