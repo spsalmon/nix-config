@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     sane-airscan
-    epsonscan2
+    #epsonscan2
     cups-filters
     xsane
   ];
