@@ -17,7 +17,7 @@
       ../../modules/nixos/music.nix
       ../../modules/nixos/gimp.nix
       ../../modules/nixos/emulators.nix
-      ../../modules/nixos/krita.nix
+      #../../modules/nixos/krita.nix
       ../../modules/nixos/docker.nix
       #../../modules/nixos/quickemu.nix
       ../../modules/nixos/virtualbox.nix
