@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     lutris
-    wineWowPackages.staging
+    wineWow64Packages
     winetricks
   ];
 }
