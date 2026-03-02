@@ -51,7 +51,6 @@
     baobab
     epiphany
     gnome-text-editor
-    gnome-calculator
     gnome-calendar
     gnome-characters
     # gnome-clocks

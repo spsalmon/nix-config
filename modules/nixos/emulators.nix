@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    melonds #DS emulator
+    melonDS #DS emulator
   ];
 }
