@@ -10,9 +10,9 @@
       ../../modules/nixos/emulators.nix
       ../../modules/nixos/controllers.nix
       ../../modules/nixos/qbittorrent.nix
-      ../../modules/nixos/virtualbox.nix
       ../../modules/nixos/mtg.nix
       ../../modules/nixos/godot.nix
+      ../../modules/nixos/vscode.nix
     ];
 
   hardware.nvidia = {

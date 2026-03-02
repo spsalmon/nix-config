@@ -98,7 +98,18 @@
     nil
     appimage-run
     efitools
-    #parallel-disk-usage
+    vesktop
+    discord
+    pavucontrol
+    firefox
+    lshw
+    keepassxc
+    zip
+    unzip
+    networkmanager
+    nmap
+    ncdu
+    hyfetch
   ];
   
   # Allow experimental features
