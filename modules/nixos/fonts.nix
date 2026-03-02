@@ -7,12 +7,6 @@
   ];
   fonts = {
     packages = with pkgs; [
-      #noto-fonts
-      #noto-fonts-cjk
-      #noto-fonts-emoji
-      #twemoji-color-font
-      #fira-code
-      #fira-code-symbols
       ibm-plex
       nerd-fonts.blex-mono
     ];
