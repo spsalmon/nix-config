@@ -1,5 +1,9 @@
 { lib, config, pkgs, ... }:
 {
+  imports =
+    [
+      ./thunar.nix
+    ];
   services.xserver.enable = true;
 
   # No GNOME/GDM
@@ -20,9 +24,6 @@
     rofi
     feh
     lxappearance
-
-    alacritty   # terminal (recommended)
-    thunar      # file manager (recommended)
     xdg-utils   # xdg-open, etc (recommended)
   ];
 }
