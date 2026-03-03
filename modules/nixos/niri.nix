@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }
+{ lib, config, pkgs, ... }:
 {
   # Enable Niri
   programs.niri.enable = true;
