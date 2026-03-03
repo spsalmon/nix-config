@@ -10,7 +10,7 @@
 
     # Start panel + wallpaper + optional extras
     autostart = [
-      "feh --bg-scale ~/nix-config/wallpaper/disco_elysium1.png"
+      "feh --bg-scale ~nix-config/wallpaper/disco_elysium1.png"
       "picom"
       "tint2"
     ];
