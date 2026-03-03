@@ -3,8 +3,8 @@
   # Enable Niri
   programs.niri.enable = true;
 
-  # Enable Xwayland
   environment.systemPackages = with pkgs; [
-    xwayland-satellite
+    xwayland-satellite #xwayland support
+    jq
   ];
 }
