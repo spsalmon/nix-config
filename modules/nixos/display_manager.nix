@@ -6,7 +6,7 @@
       autoNumlock = true;
       wayland = {
         enable = true;
-        compositor = "niri";
+        compositor = "kwin";
       };
     };
     defaultSession = null;
