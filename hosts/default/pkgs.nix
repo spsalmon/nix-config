@@ -2,15 +2,27 @@
 
 {
   imports = [
-    ../../modules/nixos/libreoffice.nix
-    ../../modules/nixos/vlc.nix
-    ../../modules/nixos/fonts.nix
-    ../../modules/nixos/steam.nix
+    # system
     ../../modules/nixos/fish.nix
-    ../../modules/nixos/gnome.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/tmux.nix
     ../../modules/nixos/tailscale.nix
+    ../../modules/nixos/fonts.nix
+    ../../modules/nixos/kitty.nix
+    ../../modules/nixos/compression.nix
+
+    # programming
+    ../../modules/nixos/vscode.nix
+
+    # software
+    ../../modules/nixos/libreoffice.nix
+    ../../modules/nixos/vlc.nix
+    ../../modules/nixos/discord.nix
+    ../../modules/nixos/firefox.nix
+
+    # gaming
+    ../../modules/nixos/steam.nix
+
   ];
 
   nix.settings.download-buffer-size = 5524288000;
@@ -80,36 +92,27 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # miscelaneous kinda vital packages I want everywhere
   environment.systemPackages = with pkgs; [
     wget
     libinput
     git
-    alacritty
-    rar
-    unrar
-    openfortivpn
     gnumake
     libgcc
     fuse
     libGL
-    emacs
     nil
     appimage-run
     efitools
-    vesktop
-    discord
     pavucontrol
-    firefox
     lshw
-    keepassxc
-    zip
-    unzip
     networkmanager
     nmap
     ncdu
     hyfetch
+
+
+    keepassxc
   ];
   
   # Allow experimental features

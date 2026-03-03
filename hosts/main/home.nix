@@ -4,6 +4,6 @@
   imports =
     [
       ../default/home.nix
-      ../../modules/home-manager/gnome.nix
+      ../../modules/home-manager/openbox.nix
     ];
 }
