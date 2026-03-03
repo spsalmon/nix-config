@@ -80,10 +80,11 @@
         modules = [ 
           {users.users."${username}".isNormalUser = true;}
           ./hosts/main/configuration.nix
-          inputs.musnix.nixosModules.musnix
+          musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
           niri.nixosModules.niri
+          noctalia.homeModules.noctalia
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
