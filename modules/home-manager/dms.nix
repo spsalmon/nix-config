@@ -1,7 +1,7 @@
 {pkgs, config, lib, inputs, ... }:
 {
   programs.dank-material-shell = {
-    enable = isDesktop;
+    enable = true;
     niri.includes = {
       enable = true;
       override = true;
