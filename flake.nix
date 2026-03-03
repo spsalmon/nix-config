@@ -6,7 +6,8 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";    };
+      inputs.nixpkgs.follows = "nixpkgs";    
+    };
 
     
     lanzaboote = {
@@ -28,7 +29,7 @@
     musnix.url = "github:musnix/musnix";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, niri, noctalia, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, niri, ... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
@@ -84,7 +85,6 @@
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
           niri.nixosModules.niri
-          noctalia.homeModules.noctalia
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
