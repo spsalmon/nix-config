@@ -7,7 +7,8 @@
       ../default/pkgs.nix
       ../../modules/nixos/bootloader.nix
       ../../modules/nixos/nvidia.nix
-      ../../modules/nixos/openbox.nix
+      ../../modules/nixos/display_manager.nix
+      ../../modules/nixos/niri.nix
       ../../modules/nixos/secure_boot.nix
       ../../modules/nixos/keyboard.nix
       ../../modules/nixos/printing_and_scanning.nix

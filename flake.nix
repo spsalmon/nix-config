@@ -11,17 +11,24 @@
     
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-      # Optional but recommended to limit the size of your system closure.
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-
-    musnix  = { url = "github:musnix/musnix"; };
+    musnix.url = "github:musnix/musnix";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, niri, noctalia, ... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
@@ -67,30 +74,6 @@
         ];
       };
 
-      nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit inputs username;};
-        modules = [
-          nixos-wsl.nixosModules.default
-          {
-            system.stateVersion = "23.11";
-            wsl.enable = true;
-          }
-          {users.users."${username}".isNormalUser = true;}
-          ./hosts/wsl/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-
-            # This should point to your home.nix path of course. For an example
-            # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./hosts/wsl/home.nix;
-          }
-        ];
-      };
-
       nixosConfigurations.main = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit inputs username;};
@@ -100,6 +83,7 @@
           inputs.musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
+          niri.nixosModules.niri
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
