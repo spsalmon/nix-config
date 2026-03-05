@@ -13,6 +13,8 @@
       ../../modules/nixos/mtg.nix
       ../../modules/nixos/godot.nix
       ../../modules/nixos/vscode.nix
+
+      ../../modules/nixos/niri.nix
     ];
 
   hardware.nvidia = {
