@@ -11,6 +11,7 @@
       ../../modules/nixos/niri.nix
       ../../modules/nixos/secure_boot.nix
       ../../modules/nixos/keyboard.nix
+      ../../modules/nixos/solaar.nix
       ../../modules/nixos/printing_and_scanning.nix
 
       # programming
