@@ -13,6 +13,9 @@
       ../../modules/nixos/mtg.nix
       ../../modules/nixos/godot.nix
       ../../modules/nixos/vscode.nix
+
+      ../../modules/nixos/niri.nix
+      ../../modules/nixos/display_manager.nix
     ];
 
   hardware.nvidia = {
