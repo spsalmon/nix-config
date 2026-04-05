@@ -9,8 +9,8 @@
     "Mod+T".action.spawn = "kitty";
 
     # navigation
-    "Mod+H".action.focus-column-left;
-    "Mod+L".action.focus-column-right;
+    "Mod+H".action.focus-column-left = [];
+    "Mod+L".action.focus-column-right = [];
     "Mod+1".action.focus-workspace = 1;
   };
 }
