@@ -62,6 +62,7 @@
           {users.users."${username}".isNormalUser = true;}
           ./hosts/gaming-laptop/configuration.nix
           home-manager.nixosModules.home-manager
+          niri.nixosModules.niri
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
