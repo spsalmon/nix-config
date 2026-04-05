@@ -9,7 +9,7 @@
       enable = true;
       enableOnBoot = true;
     };
-  }
+  };
 
   users.users.sacha.extraGroups = [ "docker" ];
 
