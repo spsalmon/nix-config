@@ -7,5 +7,6 @@
     xwayland-satellite #xwayland support
     jq
     fuzzel
+    kdePackages.dolphin
   ];
 }

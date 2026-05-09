@@ -20,7 +20,7 @@
 
       # software
       ../../modules/nixos/qbittorrent.nix
-      ../../modules/nixos/podman.nix
+      ../../modules/nixos/docker.nix
 
 
     ];
