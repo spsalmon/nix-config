@@ -6,10 +6,9 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";    
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,122 +29,73 @@
     claude-code.url = "github:sadjow/claude-code-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, niri, claude-code, ... }@inputs:
+  outputs =
+    { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, niri, claude-code, ... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
+
+      # Applied to every host
+      commonModule = { pkgs, ... }: {
+        users.users.${username}.isNormalUser = true;
+        nixpkgs.overlays = [ claude-code.overlays.default ];
+        environment.systemPackages = [ pkgs.claude-code ];
+      };
+
+      # Home-manager wiring for a given host directory
+      hmModule = hostDir: {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          backupFileExtension = "backup";
+          sharedModules = [ ];
+          users.${username} = import (hostDir + "/home.nix");
+        };
+      };
+
+      # Secure Boot via lanzaboote (main only)
+      lanzabooteModule = { pkgs, lib, ... }: {
+        environment.systemPackages = [ pkgs.sbctl ];
+        boot.loader.systemd-boot.enable = lib.mkForce false;
+        boot.lanzaboote = {
+          enable = true;
+          pkiBundle = "/var/lib/sbctl";
+        };
+      };
+
+      mkHost = { hostName, extraModules ? [ ] }:
+        let hostDir = ./hosts + "/${hostName}";
+        in nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs username; };
+          modules = [
+            commonModule
+            (hostDir + "/configuration.nix")
+            home-manager.nixosModules.home-manager
+            (hmModule hostDir)
+          ] ++ extraModules;
+        };
     in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit inputs username;};
-        modules = [ 
-          {users.users."${username}".isNormalUser = true;}
-          ./hosts/default/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [];
+      nixosConfigurations = {
+        default = mkHost { hostName = "default"; };
 
-            # This should point to your home.nix path of course. For an example
-            # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./hosts/default/home.nix;
-          }
-          nixpkgs.overlays = [ claude-code.overlays.default ];
-          environment.systemPackages = [ pkgs.claude-code ];
-        ];
+        lab = mkHost { hostName = "lab"; };
+
+        gaming-laptop = mkHost {
+          hostName = "gaming-laptop";
+          extraModules = [ niri.nixosModules.niri ];
+        };
+
+        main = mkHost {
+          hostName = "main";
+          extraModules = [
+            musnix.nixosModules.musnix
+            lanzaboote.nixosModules.lanzaboote
+            niri.nixosModules.niri
+            lanzabooteModule
+          ];
+        };
       };
-      
-      nixosConfigurations.gaming-laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit inputs username;};
-        modules = [ 
-          {users.users."${username}".isNormalUser = true;}
-          ./hosts/gaming-laptop/configuration.nix
-          home-manager.nixosModules.home-manager
-          niri.nixosModules.niri
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [];
-
-            # This should point to your home.nix path of course. For an example
-            # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./hosts/gaming-laptop/home.nix;
-          }
-          nixpkgs.overlays = [ claude-code.overlays.default ];
-          environment.systemPackages = [ pkgs.claude-code ];
-        ];
-      };
-
-      nixosConfigurations.main = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit inputs username;};
-        modules = [ 
-          {users.users."${username}".isNormalUser = true;}
-          ./hosts/main/configuration.nix
-          musnix.nixosModules.musnix
-          home-manager.nixosModules.home-manager
-          lanzaboote.nixosModules.lanzaboote
-          niri.nixosModules.niri
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [];
-
-            # This should point to your home.nix path of course. For an example
-            # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./hosts/main/home.nix;
-          }
-          
-          ({ pkgs, lib, ... }: {
-
-            environment.systemPackages = [
-              # For debugging and troubleshooting Secure Boot.
-              pkgs.sbctl
-            ];
-
-            # Lanzaboote currently replaces the systemd-boot module.
-            # This setting is usually set to true in configuration.nix
-            # generated at installation time. So we force it to false
-            # for now.
-            boot.loader.systemd-boot.enable = lib.mkForce false;
-
-            boot.lanzaboote = {
-              enable = true;
-              pkiBundle = "/var/lib/sbctl";
-            };
-          })
-          nixpkgs.overlays = [ claude-code.overlays.default ];
-          environment.systemPackages = [ pkgs.claude-code ];
-        ];
-      };
-
-      nixosConfigurations.lab = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit inputs username;};
-        modules = [ 
-          {users.users."${username}".isNormalUser = true;}
-          ./hosts/lab/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.sharedModules = [];
-
-            # This should point to your home.nix path of course. For an example
-            # of this see ./home.nix in this directory.
-            home-manager.users."${username}" = import ./hosts/lab/home.nix;
-          }
-          nixpkgs.overlays = [ claude-code.overlays.default ];
-          environment.systemPackages = [ pkgs.claude-code ];
-        ];
-      };
-
     };
 }
