@@ -27,9 +27,10 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     musnix.url = "github:musnix/musnix";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, niri, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, musnix, lanzaboote, niri, claude-code, ... }@inputs:
     let
       username = "sacha";
       system = "x86_64-linux";
@@ -52,6 +53,8 @@
             # of this see ./home.nix in this directory.
             home-manager.users."${username}" = import ./hosts/default/home.nix;
           }
+          nixpkgs.overlays = [ claude-code.overlays.default ];
+          environment.systemPackages = [ pkgs.claude-code ];
         ];
       };
       
@@ -73,6 +76,8 @@
             # of this see ./home.nix in this directory.
             home-manager.users."${username}" = import ./hosts/gaming-laptop/home.nix;
           }
+          nixpkgs.overlays = [ claude-code.overlays.default ];
+          environment.systemPackages = [ pkgs.claude-code ];
         ];
       };
 
@@ -115,6 +120,8 @@
               pkiBundle = "/var/lib/sbctl";
             };
           })
+          nixpkgs.overlays = [ claude-code.overlays.default ];
+          environment.systemPackages = [ pkgs.claude-code ];
         ];
       };
 
@@ -135,6 +142,8 @@
             # of this see ./home.nix in this directory.
             home-manager.users."${username}" = import ./hosts/lab/home.nix;
           }
+          nixpkgs.overlays = [ claude-code.overlays.default ];
+          environment.systemPackages = [ pkgs.claude-code ];
         ];
       };
 
