@@ -7,6 +7,7 @@
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/tmux.nix
     ../../modules/nixos/tailscale.nix
+    ../../modules/nixos/syncthing.nix
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/kitty.nix
     ../../modules/nixos/compression.nix
