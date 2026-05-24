@@ -16,6 +16,7 @@
     ../../modules/nixos/vscode.nix
 
     # software
+    ../../modules/nixos/thunar.nix
     ../../modules/nixos/libreoffice.nix
     ../../modules/nixos/vlc.nix
     ../../modules/nixos/discord.nix
