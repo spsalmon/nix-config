@@ -26,13 +26,15 @@ let
         wineboot --init
         wineserver --wait
 
-        # wine-staging 10.x with new WoW64 doesn't populate %AppData% in the Windows
-        # process environment.  Wine inherits Unix env vars, so exporting APPDATA here
-        # causes cmd.exe (and winetricks) to see it as %AppData%.
+        # NixOS wraps wine binaries in shell scripts, so winetricks can't read the
+        # ELF machine-type byte and falls back to constructing a "wine64" path that
+        # doesn't exist.  It then uses that missing binary as WINE_ARCH, causing every
+        # cmd.exe call to silently produce no output (empty %AppData%).
+        # Presetting WINE64 makes winetricks skip the broken fallback and use wine directly.
+        export WINE64
+        WINE64="$(which wine)"
         USERNAME=$(id -un)
         mkdir -p "$WINEPREFIX/drive_c/users/$USERNAME/AppData/Roaming"
-        export APPDATA="C:\\users\\$USERNAME\\AppData\\Roaming"
-        export USERPROFILE="C:\\users\\$USERNAME"
 
         winetricks -q corefonts calibri tahoma
         WINEDLLOVERRIDES="mscoree=" taskset -c 0 winetricks -q -f dotnet48
