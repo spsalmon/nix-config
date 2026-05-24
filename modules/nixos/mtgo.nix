@@ -26,15 +26,13 @@ let
         wineboot --init
         wineserver --wait
 
-        # wineboot doesn't always populate Shell Folders; set AppData explicitly
-        # so winetricks can resolve %AppData% when installing fonts/dotnet
+        # wine-staging 10.x with new WoW64 doesn't populate %AppData% in the Windows
+        # process environment.  Wine inherits Unix env vars, so exporting APPDATA here
+        # causes cmd.exe (and winetricks) to see it as %AppData%.
         USERNAME=$(id -un)
         mkdir -p "$WINEPREFIX/drive_c/users/$USERNAME/AppData/Roaming"
-        wine reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" \
-          /v AppData /t REG_SZ /d "C:\users\$USERNAME\AppData\Roaming" /f 2>/dev/null || true
-        wine reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" \
-          /v AppData /t REG_EXPAND_SZ /d "%USERPROFILE%\AppData\Roaming" /f 2>/dev/null || true
-        wineserver --wait
+        export APPDATA="C:\\users\\$USERNAME\\AppData\\Roaming"
+        export USERPROFILE="C:\\users\\$USERNAME"
 
         winetricks -q corefonts calibri tahoma
         WINEDLLOVERRIDES="mscoree=" taskset -c 0 winetricks -q -f dotnet48
