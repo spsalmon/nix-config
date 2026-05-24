@@ -25,8 +25,15 @@ let
 
         wineboot --init
         wineserver --wait
-        # Force user-profile setup so %AppData% is resolvable before winetricks runs
-        wine cmd.exe /c "echo boot" 2>/dev/null || true
+
+        # wineboot doesn't always populate Shell Folders; set AppData explicitly
+        # so winetricks can resolve %AppData% when installing fonts/dotnet
+        USERNAME=$(id -un)
+        mkdir -p "$WINEPREFIX/drive_c/users/$USERNAME/AppData/Roaming"
+        wine reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" \
+          /v AppData /t REG_SZ /d "C:\users\$USERNAME\AppData\Roaming" /f 2>/dev/null || true
+        wine reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" \
+          /v AppData /t REG_EXPAND_SZ /d "%USERPROFILE%\AppData\Roaming" /f 2>/dev/null || true
         wineserver --wait
 
         winetricks -q corefonts calibri tahoma
