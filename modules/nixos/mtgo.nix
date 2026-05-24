@@ -17,16 +17,20 @@ let
       export WINEPREFIX
       export WINEARCH=win64
       export WINEDEBUG="''${WINEDEBUG:--all}"
+      export WINEFSYNC=1
 
       bootstrap() {
         echo "[mtgo] First-run bootstrap at $WINEPREFIX (~10 min, mostly dotnet48)..."
         mkdir -p "$WINEPREFIX"
 
-        WINEDLLOVERRIDES="mscoree=" wineboot --init
+        wineboot --init
+        wineserver --wait
+        # Force user-profile setup so %AppData% is resolvable before winetricks runs
+        wine cmd.exe /c "echo boot" 2>/dev/null || true
         wineserver --wait
 
         winetricks -q corefonts calibri tahoma
-        taskset -c 0 winetricks -q -f dotnet48
+        WINEDLLOVERRIDES="mscoree=" taskset -c 0 winetricks -q -f dotnet48
         winetricks -q win10 sound=alsa renderer=gdi
 
         echo "[mtgo] Fetching MTGO ClickOnce installer..."
