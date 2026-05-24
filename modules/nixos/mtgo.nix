@@ -5,7 +5,7 @@ let
   mtgo = pkgs.writeShellApplication {
     name = "mtgo";
     runtimeInputs = with pkgs; [
-      wineWowPackages.stable
+      wineWowPackages.stagingFull
       winetricks
       cabextract
       curl
@@ -17,7 +17,6 @@ let
       export WINEPREFIX
       export WINEARCH=win64
       export WINEDEBUG="''${WINEDEBUG:--all}"
-      export DOTNET_BCL_NGEN_DISABLED=1
 
       bootstrap() {
         echo "[mtgo] First-run bootstrap at $WINEPREFIX (~10 min, mostly dotnet48)..."
@@ -28,7 +27,7 @@ let
 
         winetricks -q corefonts calibri tahoma
         taskset -c 0 winetricks -q -f dotnet48
-        winetricks -q win7 sound=alsa renderer=gdi
+        winetricks -q win10 sound=alsa renderer=gdi
 
         echo "[mtgo] Fetching MTGO ClickOnce installer..."
         curl -fL -o "$WINEPREFIX/mtgo-setup.exe" \
