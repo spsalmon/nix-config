@@ -38,6 +38,7 @@ let
 
         winetricks -q corefonts calibri tahoma
         WINEDLLOVERRIDES="mscoree=" taskset -c 0 winetricks -q -f dotnet48
+        winetricks -q vcrun2022 d3dcompiler_47
         winetricks -q win10 sound=alsa renderer=gdi
 
         echo "[mtgo] Fetching MTGO ClickOnce installer..."
