@@ -34,6 +34,7 @@
       # gaming
       ../../modules/nixos/cockatrice.nix
       ../../modules/nixos/mtg.nix
+      ../../modules/nixos/mtgo.nix
       ../../modules/nixos/emulators.nix
       ../../modules/nixos/osu_lazer.nix
       ../../modules/nixos/lutris_and_wine.nix

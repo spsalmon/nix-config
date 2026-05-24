@@ -17,6 +17,7 @@
       # gaming
       ../../modules/nixos/controllers.nix
       ../../modules/nixos/mtg.nix
+      ../../modules/nixos/mtgo.nix
 
       # software
       ../../modules/nixos/qbittorrent.nix
