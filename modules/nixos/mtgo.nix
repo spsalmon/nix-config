@@ -38,33 +38,26 @@ let
 
         winetricks -q corefonts calibri tahoma
         WINEDLLOVERRIDES="mscoree=" taskset -c 0 winetricks -q -f dotnet48
-        winetricks -q vcrun2022 d3dcompiler_47 dxvk
-        winetricks -q win10 sound=disabled
+        winetricks -q vcrun2022 d3dcompiler_47
+        # renderer=gl: wined3d OpenGL backend uses the GPU and supports WPF D3DImage
+        # readback correctly (glReadPixels). DXVK's Vulkan backend breaks D3DImage
+        # compositing, causing a black screen.
+        winetricks -q win10 sound=disabled renderer=gl
 
         echo "[mtgo] Fetching MTGO ClickOnce installer..."
         curl -fL -o "$WINEPREFIX/mtgo-setup.exe" \
           "https://mtgo.patch.daybreakgames.com/patch/mtg/live/client/setup.exe?v=8"
 
         touch "$WINEPREFIX/.bootstrapped"
-        touch "$WINEPREFIX/.dxvk_installed"
         echo "[mtgo] Bootstrap done."
       }
 
-      install_dxvk() {
-        echo "[mtgo] Installing DXVK for GPU acceleration..."
-        export WINE64
-        WINE64="$(which wine)"
-        winetricks -q dxvk
-        touch "$WINEPREFIX/.dxvk_installed"
-      }
-
       [ -f "$WINEPREFIX/.bootstrapped" ] || bootstrap
-      [ -f "$WINEPREFIX/.dxvk_installed" ] || install_dxvk
 
-      export DXVK_ASYNC=1
+      # Force wined3d OpenGL even if DXVK DLLs are present in the prefix
+      export WINEDLLOVERRIDES="d3d9=b,dxgi=b"
       export __GL_SHADER_DISK_CACHE=1
       export __GL_SHADER_DISK_CACHE_PATH="$WINEPREFIX"
-      # Wine's Wayland backend breaks DXVK swapchain presentation; force XWayland
       unset WAYLAND_DISPLAY
 
       exec wine "$WINEPREFIX/mtgo-setup.exe"
