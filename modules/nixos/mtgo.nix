@@ -68,7 +68,10 @@ let
       export __GL_SYNC_TO_VBLANK=1
       unset WAYLAND_DISPLAY
 
-      exec wine "$WINEPREFIX/mtgo-setup.exe"
+      # Virtual desktop mode: all Wine windows (game + pop-ups) live inside one X11
+      # window. Bypasses XWayland/niri focus management for transient child windows,
+      # which otherwise swallow mouse events without receiving them.
+      exec wine explorer "/desktop=mtgo,1920x1080" "$WINEPREFIX/mtgo-setup.exe"
     '';
   };
 
