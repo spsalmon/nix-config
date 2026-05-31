@@ -38,18 +38,32 @@ let
 
         winetricks -q corefonts calibri tahoma
         WINEDLLOVERRIDES="mscoree=" taskset -c 0 winetricks -q -f dotnet48
-        winetricks -q vcrun2022 d3dcompiler_47
-        winetricks -q win10 sound=disabled renderer=gdi
+        winetricks -q vcrun2022 d3dcompiler_47 dxvk
+        winetricks -q win10 sound=disabled
 
         echo "[mtgo] Fetching MTGO ClickOnce installer..."
         curl -fL -o "$WINEPREFIX/mtgo-setup.exe" \
           "https://mtgo.patch.daybreakgames.com/patch/mtg/live/client/setup.exe?v=8"
 
         touch "$WINEPREFIX/.bootstrapped"
+        touch "$WINEPREFIX/.dxvk_installed"
         echo "[mtgo] Bootstrap done."
       }
 
+      install_dxvk() {
+        echo "[mtgo] Installing DXVK for GPU acceleration..."
+        export WINE64
+        WINE64="$(which wine)"
+        winetricks -q dxvk
+        touch "$WINEPREFIX/.dxvk_installed"
+      }
+
       [ -f "$WINEPREFIX/.bootstrapped" ] || bootstrap
+      [ -f "$WINEPREFIX/.dxvk_installed" ] || install_dxvk
+
+      export DXVK_ASYNC=1
+      export __GL_SHADER_DISK_CACHE=1
+      export __GL_SHADER_DISK_CACHE_PATH="$WINEPREFIX"
 
       exec wine "$WINEPREFIX/mtgo-setup.exe"
     '';
