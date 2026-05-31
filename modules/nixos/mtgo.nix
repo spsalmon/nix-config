@@ -58,6 +58,9 @@ let
       # submission thread races with WPF D3DImage LockRect, causing flickering and
       # random crashes. Without CSMT, GL calls are synchronous and LockRect is safe.
       wine reg add "HKCU\\Software\\Wine\\Direct3D" /v csmt /t REG_DWORD /d 0 /f 2>/dev/null
+      # Force wined3d to flush GL after every draw: ensures glReadPixels in D3DImage
+      # LockRect always sees a complete frame, not a partially-submitted one.
+      wine reg add "HKCU\\Software\\Wine\\Direct3D" /v StrictDrawOrdering /t REG_SZ /d "enabled" /f 2>/dev/null
       wineserver --wait
 
       # Force wined3d OpenGL even if DXVK DLLs are present in the prefix
@@ -66,6 +69,9 @@ let
       export __GL_SHADER_DISK_CACHE_PATH="$WINEPREFIX"
       # Sync GL to vblank: prevents tearing and frame-pacing flicker under XWayland/niri
       export __GL_SYNC_TO_VBLANK=1
+      # Sleep during vblank wait instead of spin-looping: reduces CPU contention
+      # with Wine threads and smooths frame delivery timing.
+      export __GL_YIELD=USLEEP
       unset WAYLAND_DISPLAY
 
       # Virtual desktop mode: all Wine windows (game + pop-ups) live inside one X11
