@@ -1,5 +1,8 @@
 {pkgs, config, lib, inputs, ... }:
 {
+  programs.niri.settings.spawn-at-startup = [
+    { command = [ "noctalia-shell" ]; }
+  ];
   programs.niri.settings.gestures.hot-corners.enable = false;
   programs.niri.settings.binds = {
 

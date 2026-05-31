@@ -64,6 +64,8 @@ let
       export DXVK_ASYNC=1
       export __GL_SHADER_DISK_CACHE=1
       export __GL_SHADER_DISK_CACHE_PATH="$WINEPREFIX"
+      # Wine's Wayland backend breaks DXVK swapchain presentation; force XWayland
+      unset WAYLAND_DISPLAY
 
       exec wine "$WINEPREFIX/mtgo-setup.exe"
     '';
