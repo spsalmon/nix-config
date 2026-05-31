@@ -54,10 +54,18 @@ let
 
       [ -f "$WINEPREFIX/.bootstrapped" ] || bootstrap
 
+      # Disable CSMT (command stream multi-threading): wined3d's background GL
+      # submission thread races with WPF D3DImage LockRect, causing flickering and
+      # random crashes. Without CSMT, GL calls are synchronous and LockRect is safe.
+      wine reg add "HKCU\\Software\\Wine\\Direct3D" /v csmt /t REG_DWORD /d 0 /f 2>/dev/null
+      wineserver --wait
+
       # Force wined3d OpenGL even if DXVK DLLs are present in the prefix
       export WINEDLLOVERRIDES="d3d9=b,dxgi=b"
       export __GL_SHADER_DISK_CACHE=1
       export __GL_SHADER_DISK_CACHE_PATH="$WINEPREFIX"
+      # Sync GL to vblank: prevents tearing and frame-pacing flicker under XWayland/niri
+      export __GL_SYNC_TO_VBLANK=1
       unset WAYLAND_DISPLAY
 
       exec wine "$WINEPREFIX/mtgo-setup.exe"
