@@ -81,9 +81,17 @@
     "Mod+WheelScrollDown".action.focus-column-right = [];
     "Mod+WheelScrollUp".action.focus-column-left    = [];
 
+    # scroll wheel: move window within workspace
+    "Mod+Shift+WheelScrollDown".action.move-column-right = [];
+    "Mod+Shift+WheelScrollUp".action.move-column-left    = [];
+
     # scroll wheel: workspace navigation
     "Mod+Ctrl+WheelScrollDown" = { cooldown-ms = 150; action.focus-workspace-down = []; };
     "Mod+Ctrl+WheelScrollUp"   = { cooldown-ms = 150; action.focus-workspace-up   = []; };
+
+    # scroll wheel: move window to workspace
+    "Mod+Shift+Ctrl+WheelScrollDown" = { cooldown-ms = 150; action.move-window-to-workspace-down = []; };
+    "Mod+Shift+Ctrl+WheelScrollUp"   = { cooldown-ms = 150; action.move-window-to-workspace-up   = []; };
 
     # window state
     "Mod+F".action.fullscreen-window = [];
