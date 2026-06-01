@@ -77,6 +77,14 @@
     "Mod+Shift+Ctrl+H".action.move-column-to-monitor-left = [];
     "Mod+Shift+Ctrl+L".action.move-column-to-monitor-right = [];
 
+    # scroll wheel: window navigation
+    "Mod+WheelScrollDown".action.focus-column-right = [];
+    "Mod+WheelScrollUp".action.focus-column-left    = [];
+
+    # scroll wheel: workspace navigation
+    "Mod+Ctrl+WheelScrollDown" = { cooldown-ms = 150; action.focus-workspace-down = []; };
+    "Mod+Ctrl+WheelScrollUp"   = { cooldown-ms = 150; action.focus-workspace-up   = []; };
+
     # window state
     "Mod+F".action.fullscreen-window = [];
     "Mod+M".action.maximize-column = [];
