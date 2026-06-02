@@ -78,6 +78,15 @@
     pulse.enable = true;
   };
 
+  # Keep the HD-audio codec (Realtek ALC1220) powered instead of letting it
+  # suspend after ~10s of silence. Without this, the analog amp ramps back up
+  # on resume, so sound starts faint and then swells to full volume after a
+  # period of quiet (e.g. starting a YouTube video). Costs a negligible amount
+  # of idle power in exchange for no wake-up fade-in.
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel power_save=0 power_save_controller=N
+  '';
+
   environment.extraOutputsToInstall = [ "dev" ]; 
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
