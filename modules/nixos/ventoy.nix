@@ -1,9 +1,8 @@
 { lib, config, pkgs, ... }:
 {
-  nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-qt5-1.1.10"
-    "ventoy-qt5-1.1.07"
-  ];
+  # NOTE: insecure-package permits live at the host level (hosts/*/pkgs.nix)
+  # because nixpkgs.config merges via recursiveUpdate, so a second definition
+  # in a module would clobber the host list rather than append to it.
   environment.systemPackages = with pkgs; [
     ventoy-full-qt
   ];

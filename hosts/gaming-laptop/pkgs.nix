@@ -26,6 +26,11 @@
 
     ];
 
+  # docker 28.5.2 is flagged insecure in nixpkgs 25.11; accept it until a patched release lands
+  nixpkgs.config.permittedInsecurePackages = [
+    "docker-28.5.2"
+  ];
+
   hardware.nvidia = {
     open = false;
   };

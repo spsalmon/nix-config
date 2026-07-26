@@ -39,7 +39,17 @@
       ../../modules/nixos/osu_lazer.nix
       ../../modules/nixos/lutris_and_wine.nix
     ];
-  
+
+  # Insecure packages accepted on this host (single source of truth — nixpkgs.config
+  # merges via recursiveUpdate, so this list must not be split across modules).
+  #  - ventoy-qt5: pulled in by ventoy-full-qt
+  #  - docker-28.5.2: flagged in nixpkgs 25.11, accepted until a patched release lands
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-qt5-1.1.10"
+    "ventoy-qt5-1.1.07"
+    "docker-28.5.2"
+  ];
+
   # enable the open source kernel drivers as they are supported on my 4060
   # according to some people, this could cause problems with cuda, so I'm disabling it
   hardware.nvidia = {
