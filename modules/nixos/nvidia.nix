@@ -38,7 +38,8 @@
     open = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # mkDefault so hosts with older GPUs can pin a legacy branch.
+    package = lib.mkDefault config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   hardware.nvidia-container-toolkit.enable = true;
