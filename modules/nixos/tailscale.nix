@@ -27,16 +27,35 @@
   # PolicySession in the binary), so lanzaboote/Secure Boot measurement changes
   # were ruled out as the trigger. The cause was the crash-loop itself.
   #
+  # 2026-08-25: the flag above is necessary but was NOT sufficient, and on its
+  # own it made things strictly worse. --encrypt-state=false does not mean
+  # "ignore the TPM" -- it means "state must be plaintext", which tailscaled
+  # enforces by MIGRATING an existing sealed file, and migration has to unseal
+  # it first. So while a sealed tailscaled.state existed, every single start
+  # attempted an unseal, failed with TPM_RC_LOCKOUT, and re-armed the 2h
+  # lockout timer. The counter could never drain and the daemon never once
+  # started. Fix was to take the sealed blob out of the path entirely:
+  #   systemctl stop tailscaled && systemctl reset-failed tailscaled
+  #   mv /var/lib/tailscale/tailscaled.state{,.tpm-sealed.bak}
+  #   systemctl start tailscaled && tailscale up   # re-auths, new node identity
+  # With no state file present tailscaled writes a fresh plaintext store and
+  # never touches the TPM again. The old node key is unrecoverable (sealed to a
+  # TPM that will not unseal it); that was accepted rather than chased.
+  #
   # To restore sealing: clear the TPM from firmware setup (safe here -- nothing
   # else uses it, and Secure Boot keys live in NVRAM), drop the flag above,
   # remove the stale state file, and re-run `tailscale up`.
   #
-  # Throttle restarts hard regardless, so a bad state file can never again
-  # cascade into a lockout: wait 60s between attempts, and allow at most 2 per
-  # day against a counter that only drains 12/day.
+  # The 2-starts-per-day throttle that used to live here existed to stop a bad
+  # state file cascading into a lockout. That is no longer reachable: with a
+  # plaintext store the start path makes no DA-protected TPM call, so a restart
+  # loop cannot lock anything out. The throttle only survived to turn a
+  # transient failure into a 24h outage ("Start request repeated too quickly"
+  # on a manual `systemctl start`), so it is relaxed to ordinary values.
+  # Reinstate the harsh limits if --encrypt-state=false is ever dropped.
   systemd.services.tailscaled = {
-    serviceConfig.RestartSec = 60;
-    startLimitIntervalSec = 86400;
-    startLimitBurst = 2;
+    serviceConfig.RestartSec = 10;
+    startLimitIntervalSec = 300;
+    startLimitBurst = 5;
   };
 }
