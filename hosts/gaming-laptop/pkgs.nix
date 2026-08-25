@@ -31,7 +31,11 @@
     "docker-28.5.2"
   ];
 
+  # The GTX 1070 is Pascal, which NVIDIA dropped after the 580 branch.
+  # nvidiaPackages.stable is now 595.x, so pin the legacy branch here.
+  # Pascal also predates the open kernel modules (Turing+ only).
   hardware.nvidia = {
     open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 }
