@@ -23,6 +23,7 @@
       ../../modules/nixos/qbittorrent.nix
       ../../modules/nixos/docker.nix
       ../../modules/nixos/openfortivpn.nix
+      ../../modules/nixos/openfortivpn-webview.nix
 
 
     ];
@@ -31,6 +32,10 @@
   nixpkgs.config.permittedInsecurePackages = [
     "docker-28.5.2"
   ];
+
+  # University of Bern VPN. SAML/SSO only, so `fortivpn` opens the login window
+  # and feeds the resulting SVPNCOOKIE to openfortivpn.
+  local.openfortivpn-webview.gateway = "univpn.unibe.ch";
 
   # The GTX 1070 is Pascal, which NVIDIA dropped after the 580 branch.
   # nvidiaPackages.stable is now 595.x, so pin the legacy branch here.

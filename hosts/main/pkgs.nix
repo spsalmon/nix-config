@@ -22,6 +22,7 @@
       # software
       ../../modules/nixos/obs.nix
       ../../modules/nixos/openfortivpn.nix
+      ../../modules/nixos/openfortivpn-webview.nix
       ../../modules/nixos/r2modman.nix
       ../../modules/nixos/chromium.nix
       ../../modules/nixos/music.nix
