@@ -22,6 +22,7 @@
       # software
       ../../modules/nixos/qbittorrent.nix
       ../../modules/nixos/docker.nix
+      ../../modules/nixos/openfortivpn.nix
 
 
     ];
